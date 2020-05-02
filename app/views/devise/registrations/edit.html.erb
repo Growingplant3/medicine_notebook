@@ -46,7 +46,7 @@
 
     <div class="form-group">
       <%= f.label :sex %></br>
-      <%= f.select :sex_i18n, autofocus: true, autocomplete: 'sex', class: 'form-control' %>
+      <%= f.select :sex, User.sexes_i18n.invert, { include_blank: false, selected: 0 }, {autofocus: true, autocomplete: 'sex', class: 'form-control'} %>
     </div>
 
     <div class="form-group">
@@ -56,7 +56,7 @@
 
     <div class="form-group">
       <%= f.label :blood_types %>
-      <%= f.select :blood_types_i18n, autofocus: true, autocomplete: 'blood_types', class: 'form-control' %>
+      <%= f.select :blood_types, User.blood_types_i18n.invert, { include_blank: false, selected: 0 }, {autofocus: true, autocomplete: 'blood_types', class: 'form-control'} %>
     </div>
 
     <div class="form-group">
