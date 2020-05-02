@@ -5,6 +5,81 @@
     <%= bootstrap_devise_error_messages! %>
 
     <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true, autocomplete: 'name', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :postcode %>
+      <%= f.text_field :postcode, autofocus: true, autocomplete: 'postcode', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :prefecture_code %>
+      <%= f.text_field :prefecture_code, autofocus: true, autocomplete: 'prefecture_code', class: 'form-control' %>
+    </div>    
+
+    <div class="form-group">
+      <%= f.label :address_city %>
+      <%= f.text_field :address_city, autofocus: true, autocomplete: 'address_city', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :address_street %>
+      <%= f.text_field :address_street, autofocus: true, autocomplete: 'address_street', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :address_building %>
+      <%= f.text_field :address_building, autofocus: true, autocomplete: 'address_building', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :telephone_number %>
+      <%= f.text_field :telephone_number, autofocus: true, autocomplete: 'telephone_number', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :age %>
+      <%= f.text_field :age, autofocus: true, autocomplete: 'age', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :sex %></br>
+      <%= f.select :sex, autofocus: true, autocomplete: 'sex', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :body_weight %>
+      <%= f.text_field :body_weight, autofocus: true, autocomplete: 'body_weight', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :side_effect %>
+      <%= f.text_area :side_effect, autofocus: true, autocomplete: 'side_effect', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :allergy %>
+      <%= f.text_area :allergy, autofocus: true, autocomplete: 'allergy', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :sick %>
+      <%= f.text_area :sick, autofocus: true, autocomplete: 'sick', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :operation %>
+      <%= f.text_area :operation, autofocus: true, autocomplete: 'operation', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :remarks %>
+      <%= f.text_area :remarks, autofocus: true, autocomplete: 'remarks', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
       <%= f.label :email %>
       <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
     </div>
