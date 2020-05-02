@@ -1,0 +1,13 @@
+ja:
+  enums:
+    user:
+      sex:
+        other-sex: "---"
+        male: "男性"
+        female: "女性"
+      blood_types:
+        type-x: "---"
+        type-a: "A型"
+        type-b: "B型"
+        type-o: "O型"
+        type-ab: "AB型"

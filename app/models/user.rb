@@ -4,5 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, presence: true
+  enum sex: { :other-sex => 0, :male => 1 , :female => 2 }
+  enum blood_types: { :type-x => 0 , :type-a => 1 , :type-b => 2 , :type-o => 3 , :type-ab => 4 }
 end

@@ -51,12 +51,17 @@
 
   <div class="form-gruop">
     <strong>性別:</strong>
-    <%= @user.sex %>
+    <%= @user.sex_i18n %>
   </div>
 
   <div class="form-gruop">
     <strong>体重:</strong>
     <%= @user.body_weight %>
+  </div>
+
+  <div class="form-gruop">
+    <strong>血液型:</strong>
+    <%= @user.blood_types_i18n %>
   </div>
 
   <div class="form-gruop">
@@ -82,6 +87,11 @@
   <div class="form-gruop">
     <strong>備考欄:</strong>
     <%= @user.remarks %>
+  </div>
+
+  <div class="form-gruop">
+    <strong>ご意見欄:</strong>
+    <%= @user.opinion %>
   </div>
 
   <hr class="devise-link my-5">

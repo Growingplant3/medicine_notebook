@@ -29,13 +29,15 @@ ActiveRecord::Schema.define(version: 2020_05_02_103003) do
     t.string "address_building"
     t.string "telephone_number"
     t.integer "age"
-    t.integer "sex"
+    t.integer "sex", default: 0, null: false
     t.integer "body_weight"
+    t.integer "blood_types", default: 0, null: false
     t.text "side_effect"
     t.text "allergy"
     t.text "sick"
     t.text "operation"
     t.text "remarks"
+    t.text "opinion"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

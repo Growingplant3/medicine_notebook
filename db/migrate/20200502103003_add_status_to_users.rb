@@ -9,12 +9,14 @@ class AddStatusToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :address_building, :string
     add_column :users, :telephone_number, :string
     add_column :users, :age, :integer
-    add_column :users, :sex, :integer
+    add_column :users, :sex, :integer, null: false, default: 0
     add_column :users, :body_weight, :integer
+    add_column :users, :blood_types, :integer, null: false, default: 0
     add_column :users, :side_effect, :text
     add_column :users, :allergy, :text
     add_column :users, :sick, :text
     add_column :users, :operation, :text
     add_column :users, :remarks, :text
+    add_column :users, :opinion, :text
   end
 end
