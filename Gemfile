@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.3'
+ruby '2.6.4'
 # ログイン機能
 gem 'devise'
 
@@ -9,8 +9,26 @@ gem 'devise'
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
 
+# 管理者機能
+gem 'rails_admin'
+gem 'cancancan'
+
+# 住所関連
+gem 'sassc', '~> 2.0.0'
+gem 'uglifier'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.1.3'
+gem 'enum_help'
+gem 'jp_prefecture'
+
+# デバッグ
+gem 'pry-rails'
+gem 'pry-byebug'
+
 # Bootstrap
 gem 'devise-bootstrap-views', '~> 1.0'
+gem 'devise-i18n-views'
+gem 'bootstrap-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
