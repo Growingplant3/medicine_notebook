@@ -1,0 +1,23 @@
+ja:
+  activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        name: 名前
+        postcode: 郵便番号
+        prefecture_code: 都道府県
+        address_city: 市町村
+        address_street: 丁目番地
+        address_building: 詳細住所
+        telephone_number: 電話番号
+        age: 年齢
+        sex: 性別
+        body_weight: 体重
+        blood_types: 血液型
+        side_effect: 副作用歴
+        allergy: アレルギー歴
+        sick: 病歴
+        operation: 手術歴
+        remarks: 備考欄
+        opinion: ご意見欄
