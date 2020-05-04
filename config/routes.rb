@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     get "user/:id", :to => "users/registrations#detail"
     get "signup", :to => "users/registrations#new"
   end
+  get "pharmacies/show" => "pharmacies#show"
   get "users/show" => "users#show"
   root 'users#index'
 end
