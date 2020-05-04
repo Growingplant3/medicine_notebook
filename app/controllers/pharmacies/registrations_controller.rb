@@ -4,6 +4,9 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
+  def show
+  end
+
   # GET /resource/sign_up
   # def new
   #   super
@@ -38,7 +41,7 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-  # protected
+  protected
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
@@ -51,10 +54,14 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    pharmacies_show_path
+  end
 
+  def after_update_path_for(resource)
+    phamaciers_show_path
+  end
+  
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)

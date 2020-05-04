@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   }
   devise_scope :user do
     get 'users/show' => 'users/registrations#show'
+    delete 'users/destroy' => 'users/registrations#destroy'
   end
-  get "pharmacies/show" => "pharmacies#show"
-  root 'users#index'
+  devise_scope :pharmacy do
+    get 'pharmacies/show' => 'pharmacies/registrations#show'
+  end
+  root 'homes#index'
 end
