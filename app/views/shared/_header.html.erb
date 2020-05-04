@@ -11,18 +11,36 @@
         <h1><%= "#{current_user.email}さんがログインしています" %></h1>
       <% end %>
     <% end %>
+
+    <% if pharmacy_signed_in? %>
+      <h1><%#= "#{current_pharmacy.name}さんがログインしています" %></h1>
+    <% end %>
+
+
   </nav>
 
   <nav class="navbar navbar-expand navbar-light nav.sticky-top justify-content-end">
     <div id="Navber">
       <ul class="navbar-nav">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to 'アカウント編集', edit_user_registration_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-          </li>
+        <% if user_signed_in? || pharmacy_signed_in? %>
+          <% if user_signed_in? >
+            <li class="nav-item active">
+             <%= link_to 'アカウント編集', edit_user_registration_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+            </li>
+          <% end %>
+          <% if pharmacy_signed_in? %>
+            <li class="nav-item active">
+              <%= link_to '薬局編集', edit_pharmacy_registration_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item active">
+              <%= link_to 'ログアウト', destroy_pharmacy_session_path, method: :delete, class: 'nav-link' %>
+            </li>
+            # 次モデル追加部分
+          <% end %>
+
         <% else %>
           <li class="nav-item active">
             <%= link_to "ユーザー新規登録", new_user_registration_path, class: 'nav-link' %>
@@ -30,6 +48,13 @@
           <li class="nav-item active">
             <%= link_to "ユーザーログイン", new_user_session_path, class: 'nav-link' %>
           </li>
+          <li class="nav-item active">
+            <%= link_to "薬局新規登録", new_pharmacy_registration_path, class: 'nav-link' %>
+          </li>
+          <li class="nav-item active">
+            <%= link_to "薬局ログイン", new_pharmacy_session_path, class: 'nav-link' %>
+          </li>
+          # 次モデル追加部分
         <% end %>
       </ul>
     </div>
