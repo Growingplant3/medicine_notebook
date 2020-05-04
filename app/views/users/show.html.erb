@@ -2,14 +2,6 @@
   <%= render 'shared/flash_messages' %>
 
   <div class="form-gruop">
-    <% if current_user.name.present? %>
-      <h1><%= "#{current_user.name}さんがログインしています" %></h1>
-    <% else %>
-      <h1><%= "#{current_user.email}さんがログインしています" %></h1>
-    <% end %>
-  <div class="form-gruop">
-
-  <div class="form-gruop">
     <strong>ユーザー名:</strong>
     <%= @user.name %>
   </div>
