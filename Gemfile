@@ -8,6 +8,7 @@ gem 'devise'
 # 日本語化
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
+gem 'enum_help'
 
 # 管理者機能
 gem 'rails_admin'
@@ -16,19 +17,18 @@ gem 'cancancan'
 # 住所関連
 gem 'sassc', '~> 2.0.0'
 gem 'uglifier'
-gem 'jquery-rails'
-gem 'bootstrap', '~> 4.1.3'
-gem 'enum_help'
 gem 'jp_prefecture'
+gem 'jquery-rails'
 
 # デバッグ
 gem 'pry-rails'
 gem 'pry-byebug'
 
 # Bootstrap
+gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap-sass'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'devise-i18n-views'
-gem 'bootstrap-sass'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
