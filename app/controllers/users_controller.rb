@@ -1,15 +1,9 @@
 class UsersController < ApplicationController
-  before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :authenticate_user!, only: :show
   def index
   end
 
   def show
     @user = current_user
-  end
-
-  protected
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :postcode, :prefecture_code, :address_city, :address_street, :address_building, :telephone_number, :age, :sex, :body_weight,:blood_types, :side_effect, :allergy, :sick, :operation, :remarks, :opinion])
   end
 end
