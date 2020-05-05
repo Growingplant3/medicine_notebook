@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :configure_sign_up_params, only: [:show,:destroy]
+  before_action :configure_account_update_params, only: [:show,:destroy]
 
   def show
     @user = current_user
@@ -44,14 +44,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-  # end
+  def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_account_update_params
-  #   devise_parameter_sanitizer.permit(:account_update, keys: [:name, :postcode, :prefecture_code, :address_city, :address_street, :address_building, :telephone_number, :age, :sex, :body_weight,:blood_types, :side_effect, :allergy, :sick, :operation, :remarks, :opinion])
-  # end
+  def configure_account_update_params
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :postcode, :prefecture_code, :address_city, :address_street, :address_building, :telephone_number, :age, :sex, :body_weight,:blood_types, :side_effect, :allergy, :sick, :operation, :remarks, :opinion])
+  end
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)

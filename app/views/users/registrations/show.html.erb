@@ -2,94 +2,94 @@
   <%= render 'shared/flash_messages' %>
 
   <div class="form-gruop">
-    <strong><%= t '.name' %></strong> 
+    <strong><%= t('user.registrations.show.name') %></strong> 
     <%= @user.name %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.postcode' %></strong>
+    <strong><%= t('user.registrations.show.postcode') %></strong>
     <%= @user.postcode%>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.prefecture_code' %></strong>
+    <strong><%= t('user.registrations.show.prefecture_code') %></strong>
     <%= @user.prefecture_code %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.address_city' %></strong>
+    <strong><%= t('user.registrations.show.address_city') %></strong>
     <%= @user.address_city %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.address_street' %></strong>
+    <strong><%= t('user.registrations.show.address_street') %></strong>
     <%= @user.address_street %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.address_building' %></strong>
+    <strong><%= t('user.registrations.show.address_building') %></strong>
     <%= @user.address_building %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.telephone_number' %></strong>
+    <strong><%= t('user.registrations.show.telephone_number') %></strong>
     <%= @user.telephone_number %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.age' %></strong>
+    <strong><%= t('user.registrations.show.age') %></strong>
     <%= @user.age %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.sex' %></strong>
+    <strong><%= t('user.registrations.show.sex') %></strong>
     <%= @user.sex_i18n %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.body_weight' %></strong>
+    <strong><%= t('user.registrations.show.body_weight') %></strong>
     <%= @user.body_weight %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.blood_types' %></strong>
+    <strong><%= t t('user.registrations.show.blood_types') %></strong>
     <%= @user.blood_types_i18n %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.side_effect' %></strong>
+    <strong><%= t('user.registrations.show.side_effect') %></strong>
     <%= @user.side_effect %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.allergy' %></strong>
+    <strong><%= t('user.registrations.show.allergy') %></strong>
     <%= @user.allergy %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.sick' %></strong>
+    <strong><%= t('user.registrations.show.sick') %></strong>
     <%= @user.sick %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.operation' %></strong>
+    <strong><%= t('user.registrations.show.operation') %></strong>
     <%= @user.operation %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.remarks' %></strong>
+    <strong><%= t('user.registrations.show.remarks') %></strong>
     <%= @user.remarks %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t '.opinion' %></strong>
+    <strong><%= t('user.registrations.show.opinion') %></strong>
     <%= @user.opinion %>
   </div>
 
   <hr class="devise-link my-5">
   <div class="form-group">
-    <%= link_to t(".update"), edit_user_registration_path, class: 'btn btn-success btn-block mb-4' %>
-    <%= link_to t(".destroy"), "/users/#{current_user.id}", method: :delete, data: { confirm: '本当に削除しても良いですか？'}, class: 'btn btn-danger btn-block mb-4' %>
-    <%= link_to t(".sign_out"), destroy_user_session_path, method: :delete, class: 'btn btn-warning btn-block mb-4' %>
+    <%= link_to t('user.registrations.show.update'), edit_user_registration_path, class: 'btn btn-success btn-block mb-4' %>
+    <%= link_to t('user.registrations.show.destroy'), "/users/#{current_user.id}", method: :delete, data: { confirm: '本当に削除しても良いですか？'}, class: 'btn btn-danger btn-block mb-4' %>
+    <%= link_to t('user.registrations.show.sign_out'), destroy_user_session_path, method: :delete, class: 'btn btn-warning btn-block mb-4' %>
   </div>
 </div>

@@ -27,7 +27,12 @@ ja:
         updated_at: 更新日
         sign_up: ユーザーアカウント登録
         sign_in: ユーザーログイン
+        edit: ユーザーアカウント編集
         forgot_your_password: ユーザーパスワードを忘れましたか?
+        top_page: トップページへ戻る
+        update: 更新する
+        destroy: 削除する
+        sign_out: ログアウト
     models:
       user: ユーザ
   user:
