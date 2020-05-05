@@ -25,9 +25,11 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+        sign_up: ユーザーアカウント登録
+        already_have_account: "アカウントをお持ちの方"
     models:
       user: ユーザ
-  devise:
+  user:
     confirmations:
       confirmed: メールアドレスが確認できました。
       new:
@@ -108,6 +110,27 @@ ja:
       update_needs_confirmation: アカウント情報を変更しました。変更されたメールアドレスの本人確認のため、本人確認用メールより確認処理をおこなってください。
       updated: アカウント情報を変更しました。
       updated_but_not_signed_in: あなたのアカウントは正常に更新されましたが、パスワードが変更されたため、再度ログインしてください。
+      show:
+        name: "ユーザー名:"
+        postcode: "郵便番号:"
+        prefecture_code: "都道府県:"
+        address_city: "市町村:"
+        address_street: "丁目番地:"
+        address_building: "建物名・部屋番号:"
+        telephone_number: "電話番号:"
+        age: "年齢:"
+        sex: "性別:"
+        body_weight: "体重:"
+        blood_types: "血液型:"
+        side_effect: "副作用歴:"
+        allergy: "アレルギー歴:"
+        sick: "病歴:"
+        operation: "手術歴:"
+        remarks: "備考欄:"
+        opinion: "ご意見欄:"
+        update: "編集する"
+        destroy: "削除する"
+        sign_out: "ログアウト"
     sessions:
       already_signed_out: 既にログアウト済みです。
       new:
@@ -123,6 +146,8 @@ ja:
         sign_in: ログイン
         sign_in_with_provider: "%{provider}でログイン"
         sign_up: アカウント登録
+        already_have_account: "アカウントをお持ちの方"
+        do_not_have_account: "アカウントをお持ちではない方"
       minimum_password_length: "（%{count}字以上）"
     unlocks:
       new:
