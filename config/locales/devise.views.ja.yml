@@ -174,9 +174,7 @@ ja:
   shared:
     header:
       application_title: ウェブお薬手帳
-      sign_in_user_name: current_user.nameさんがログインしています
-      sign_in_user_email: current_user.emailさんがログインしています
-      sign_in_pharmacy_name: current_pharmacy.nameさんがログインしています
+      sign_in_every_user: さんがログインしています
       user_account_edit: ユーザーアカウント編集
       user_sign_out: ユーザーログアウト
       user_sign_up: ユーザー新規登録

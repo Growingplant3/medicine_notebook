@@ -6,9 +6,9 @@
   <nav class="navbar navbar-expand navbar-light nav.sticky-top">
     <% if user_signed_in? %>
       <% if current_user.name.present? %>
-        <h1><%= t('.sign_in_user_name') %></h1>
+        <h1><%= current_user.name + t('.sign_in_every_user') %></h1>
       <% else %>
-        <h1><%= t('.sign_in_user_email') %></h1>
+        <h1><%= current_user.email+ t('.sign_in_every_user') %></h1>
       <% end %>
     <% end %>
 
