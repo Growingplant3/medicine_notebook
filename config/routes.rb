@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   devise_scope :pharmacy do
     get 'pharmacies/show' => 'pharmacies/registrations#show'
+    delete 'pharmacies/destroy' => 'users/registrations#destroy'
   end
   root 'homes#index'
 end

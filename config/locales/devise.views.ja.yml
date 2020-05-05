@@ -26,7 +26,8 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
         sign_up: ユーザーアカウント登録
-        already_have_account: "アカウントをお持ちの方"
+        sign_in: ユーザーログイン
+        forgot_your_password: ユーザーパスワードを忘れましたか?
     models:
       user: ユーザ
   user:
@@ -165,3 +166,17 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+  shared:
+    header:
+      application_title: ウェブお薬手帳
+      sign_in_user_name: current_user.nameさんがログインしています
+      sign_in_user_email: current_user.emailさんがログインしています
+      sign_in_pharmacy_name: current_pharmacy.nameさんがログインしています
+      user_account_edit: ユーザーアカウント編集
+      user_sign_out: ユーザーログアウト
+      user_sign_up: ユーザー新規登録
+      user_sign_in: ユーザーログイン
+      pharmacy_account_edit: 薬局アカウント編集
+      pharmacy_sign_out: 薬局ログアウト
+      pharmacy_sign_up: 薬局新規登録
+      pharmacy_sign_in: 薬局ログイン
