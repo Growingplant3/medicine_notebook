@@ -25,9 +25,17 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+        sign_up: ユーザーアカウント登録
+        sign_in: ユーザーログイン
+        edit: ユーザーアカウント編集
+        forgot_your_password: ユーザーパスワードを忘れましたか?
+        top_page: トップページへ戻る
+        update: 更新する
+        destroy: 削除する
+        sign_out: ログアウト
     models:
       user: ユーザ
-  devise:
+  user:
     confirmations:
       confirmed: メールアドレスが確認できました。
       new:
@@ -81,7 +89,7 @@ ja:
         confirm_new_password: 確認用新しいパスワード
         new_password: 新しいパスワード
       new:
-        forgot_your_password: パスワードを忘れましたか?
+        forgot_your_password: パスワードを忘れました?
         send_me_reset_password_instructions: パスワードの再設定方法を送信する
       no_token: このページにはアクセスできません。パスワード再設定メールのリンクからアクセスされた場合には、URL をご確認ください。
       send_instructions: パスワードの再設定について数分以内にメールでご連絡いたします。
@@ -108,6 +116,27 @@ ja:
       update_needs_confirmation: アカウント情報を変更しました。変更されたメールアドレスの本人確認のため、本人確認用メールより確認処理をおこなってください。
       updated: アカウント情報を変更しました。
       updated_but_not_signed_in: あなたのアカウントは正常に更新されましたが、パスワードが変更されたため、再度ログインしてください。
+      show:
+        name: "ユーザー名:"
+        postcode: "郵便番号:"
+        prefecture_code: "都道府県:"
+        address_city: "市町村:"
+        address_street: "丁目番地:"
+        address_building: "建物名・部屋番号:"
+        telephone_number: "電話番号:"
+        age: "年齢:"
+        sex: "性別:"
+        body_weight: "体重:"
+        blood_types: "血液型:"
+        side_effect: "副作用歴:"
+        allergy: "アレルギー歴:"
+        sick: "病歴:"
+        operation: "手術歴:"
+        remarks: "備考欄:"
+        opinion: "ご意見欄:"
+        update: "編集する"
+        destroy: "削除する"
+        sign_out: "ログアウト"
     sessions:
       already_signed_out: 既にログアウト済みです。
       new:
@@ -123,6 +152,8 @@ ja:
         sign_in: ログイン
         sign_in_with_provider: "%{provider}でログイン"
         sign_up: アカウント登録
+        already_have_account: "アカウントをお持ちの方"
+        do_not_have_account: "アカウントをお持ちではない方"
       minimum_password_length: "（%{count}字以上）"
     unlocks:
       new:
@@ -140,3 +171,15 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+  shared:
+    header:
+      application_title: ウェブお薬手帳
+      sign_in_every_user: さんがログインしています
+      user_account_edit: ユーザーアカウント編集
+      user_sign_out: ユーザーログアウト
+      user_sign_up: ユーザー新規登録
+      user_sign_in: ユーザーログイン
+      pharmacy_account_edit: 薬局アカウント編集
+      pharmacy_sign_out: 薬局ログアウト
+      pharmacy_sign_up: 薬局新規登録
+      pharmacy_sign_in: 薬局ログイン

@@ -8,6 +8,7 @@ gem 'devise'
 # 日本語化
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
+gem 'devise-i18n-views'
 gem 'enum_help'
 
 # 管理者機能
@@ -28,7 +29,6 @@ gem 'pry-byebug'
 gem 'bootstrap', '~> 4.1.3'
 gem 'bootstrap-sass'
 gem 'devise-bootstrap-views', '~> 1.0'
-gem 'devise-i18n-views'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'

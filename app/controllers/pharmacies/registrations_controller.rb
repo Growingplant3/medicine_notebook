@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, only: [:show,:destroy]
-  before_action :configure_account_update_params, only: [:show,:destroy]
+class Pharmacies::RegistrationsController < Devise::RegistrationsController
+  # before_action :configure_sign_up_params, only: [:create]
+  # before_action :configure_account_update_params, only: [:update]
 
   def show
-    @user = current_user
   end
 
   # GET /resource/sign_up
@@ -29,8 +28,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # DELETE /resource
-  def destroy
-  end
+  # def destroy
+  #   super
+  # end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
@@ -44,30 +44,26 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-  end
+  # def configure_sign_up_params
+  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+  # end
 
   # If you have extra params to permit, append them to the sanitizer.
-  def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :postcode, :prefecture_code, :address_city, :address_street, :address_building, :telephone_number, :age, :sex, :body_weight,:blood_types, :side_effect, :allergy, :sick, :operation, :remarks, :opinion])
-  end
+  # def configure_account_update_params
+  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
+  # end
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    users_show_path
+    pharmacies_show_path
   end
 
   def after_update_path_for(resource)
-    users_show_path
+    phamaciers_show_path
   end
-
-  def after_destroy_path_for(resource)
-    root_path
-  end
-
+  
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
-  #   users_show_path
+  #   super(resource)
   # end
 end
