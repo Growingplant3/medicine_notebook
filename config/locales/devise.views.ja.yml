@@ -188,6 +188,12 @@ ja:
       pharmacy_sign_out: 薬局ログアウト
       pharmacy_sign_up: 薬局新規登録
       pharmacy_sign_in: 薬局ログイン
+      function: 機能一覧
+      config: 設定
+      new_face: 新規登録
+      all_sign_in: ログイン
+      other_function: その他
+      not_set: 未設定
   pharmacy:
     registrations:
       new:
