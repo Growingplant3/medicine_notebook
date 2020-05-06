@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Users::RegistrationsController < Devise::RegistrationsController
-  before_action :configure_sign_up_params, only: [:show,:destroy]
-  before_action :configure_account_update_params, only: [:show,:destroy]
+  before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_account_update_params, only: [:update]
 
   def show
     @user = current_user
@@ -30,6 +30,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # DELETE /resource
   def destroy
+    @user = current_user
   end
 
   # GET /resource/cancel

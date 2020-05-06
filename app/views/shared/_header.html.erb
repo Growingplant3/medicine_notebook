@@ -1,62 +1,60 @@
-<header class="hf-both">
-  <nav class="navbar navbar-expand navbar-light nav.sticky-top">
-    <%= link_to t('.application_title'), root_path, class: 'navbar-brand' %>
-  </nav>
-
-  <nav class="navbar navbar-expand navbar-light nav.sticky-top">
-    <% if user_signed_in? %>
-      <% if current_user.name.present? %>
-        <h1><%= current_user.name + t('.sign_in_every_user') %></h1>
-      <% else %>
-        <h1><%= current_user.email+ t('.sign_in_every_user') %></h1>
-      <% end %>
-    <% end %>
-
-    <% if pharmacy_signed_in? %>
-      <h1><%= t('.sign_in_pharmacy_name') %></h1>
-    <% end %>
-
-    <%# 次モデル追加部分 %>
-  </nav>
-
-  <nav class="navbar navbar-expand navbar-light nav.sticky-top justify-content-end">
-    <div id="Navber">
-      <ul class="navbar-nav">
-        <% if user_signed_in? || pharmacy_signed_in? %>
-          <% if user_signed_in? %>
-            <li class="nav-item active">
-             <%= link_to t('.user_account_edit'), edit_user_registration_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to t('.user_sign_out'), destroy_user_session_path, method: :delete, class: 'nav-link' %>
-            </li>
-          <% end %>
-          <% if pharmacy_signed_in? %>
-            <li class="nav-item active">
-              <%= link_to t('.pharmacy_account_edit'), edit_pharmacy_registration_path, class: 'nav-link' %>
-            </li>
-            <li class="nav-item active">
-              <%= link_to t('.pharmacy_sign_out'), destroy_pharmacy_session_path, method: :delete, class: 'nav-link' %>
-            </li>
-            <%# 次モデル追加部分 %>
-          <% end %>
-
-        <% else %>
-          <li class="nav-item active">
-            <%= link_to t('.user_sign_up'), new_user_registration_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to t('.user_sign_in'), new_user_session_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to t('.pharmacy_sign_up'), new_pharmacy_registration_path, class: 'nav-link' %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to t('.pharmacy_sign_in'), new_pharmacy_session_path, class: 'nav-link' %>
-          </li>
-            <%# 次モデル追加部分 %>
-        <% end %>
-      </ul>
+<header class="hf-both fixed-top">
+  <nav class="navbar navbar-expand navbar-light">
+    <div class="navbar-nav mr-auto">
+      <%= link_to t('.application_title'), root_path, class: 'navbar-brand' %>
     </div>
+
+    <div class="navbar-nav">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          新規登録
+        </button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <%= link_to t('.user_sign_up'), new_user_registration_path, class: 'nav-link' %>
+            </li>
+            <li class="dropdown-item">
+              <%= link_to t('.pharmacy_sign_up'), new_pharmacy_registration_path, class: 'nav-link' %>
+            </li>
+            <%# 次モデル新規登録追加部分 %>
+          </ul>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          ログイン
+        </button>
+          <ul class="dropdown-menu">
+            <li class="nav-item">
+              <%= link_to t('.user_sign_in'), new_user_session_path, class: 'nav-link' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to t('.pharmacy_sign_in'), new_pharmacy_session_path, class: 'nav-link' %>
+            </li>
+          </ul>
+          <%# 次モデルログイン追加部分 %>
+      </div>
+    </div>
+  </nav>
+
+  <nav class="navbar navbar-expand navbar-light">
+    <% unless user_signed_in? || pharmacy_signed_in? %>
+      <h1>アプリケーションの利用には新規登録、またはログインが必要です。</h1>
+    <% else %>
+      <% if user_signed_in? %>
+        <% if current_user.name.present? %>
+          <h1><%= current_user.name + t('.sign_in_every_user') %></h1>
+        <% else %>
+          <h1><%= current_user.email+ t('.sign_in_every_user') %></h1>
+        <% end %>
+      <% end %>
+      <% if pharmacy_signed_in? %>
+        <% if current_pharmacy.name.present? %>
+          <h1><%= current_pharmacy.name + t('.sign_in_every_user') %></h1>
+        <% else %>
+          <h1><%= current_pharmacy.email+ t('.sign_in_every_user') %></h1>
+        <% end %>
+      <% end %>
+      <%# 次モデル追加部分 %>
+    <% end %>
   </nav>
 </header>

@@ -1,1 +1,59 @@
-<h1>pharmacy show.html.erb</h1>
+<div class="container-login">
+  <%= render 'shared/flash_messages' %>
+
+  <div class="form-gruop">
+    <strong><%= t('pharmacy.registrations.show.name') %></strong> 
+    <%= @pharmacy.name %>
+  </div>
+
+  <div class="form-gruop">
+    <strong><%= t('user.registrations.show.postcode') %></strong>
+    <%= @pharmacy.postcode%>
+  </div>
+
+  <div class="form-gruop">
+    <strong><%= t('user.registrations.show.prefecture_code') %></strong>
+    <%= @pharmacy.prefecture_code %>
+  </div>
+
+  <div class="form-gruop">
+    <strong><%= t('user.registrations.show.address_city') %></strong>
+    <%= @pharmacy.address_city %>
+  </div>
+
+  <div class="form-gruop">
+    <strong><%= t('user.registrations.show.address_street') %></strong>
+    <%= @pharmacy.address_street %>
+  </div>
+
+  <div class="form-gruop">
+    <strong><%= t('pharmacy.registrations.show.address_building') %></strong>
+    <%= @pharmacy.address_building %>
+  </div>
+
+  <div class="form-gruop">
+    <strong><%= t('pharmacy.registrations.show.normal_telephone_number') %></strong>
+    <%= @pharmacy.normal_telephone_number %>
+  </div>
+
+  <div class="form-gruop">
+    <strong><%= t('pharmacy.registrations.show.abnormal_telephone_number') %></strong>
+    <%= @pharmacy.abnormal_telephone_number %>
+  </div>
+  <div class="form-gruop">
+    <strong><%= t('user.registrations.show.remarks') %></strong>
+    <%= @pharmacy.remarks %>
+  </div>
+
+  <div class="form-gruop">
+    <strong><%= t('user.registrations.show.opinion') %></strong>
+    <%= @pharmacy.opinion %>
+  </div>
+
+  <hr class="devise-link my-5">
+  <div class="form-group">
+    <%= link_to t('user.registrations.show.update'), edit_pharmacy_registration_path, class: 'btn btn-success btn-block mb-4' %>
+    <%= link_to t('user.registrations.show.destroy'), "/pharmacies/#{current_pharmacy.id}", method: :delete, data: { confirm: '本当に削除しても良いですか？'}, class: 'btn btn-danger btn-block mb-4' %>
+    <%= link_to t('user.registrations.show.sign_out'), destroy_pharmacy_session_path, method: :delete, class: 'btn btn-warning btn-block mb-4' %>
+  </div>
+</div>

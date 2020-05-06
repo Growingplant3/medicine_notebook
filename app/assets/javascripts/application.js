@@ -19,3 +19,16 @@ $(function(){
       }
   });
 });
+
+$(function(){
+    $('input[name="pharmacy[postcode]"]').jpostal({
+        postcode : [
+            '[name="pharmacy[postcode]"]',
+        ],
+        address : {
+            '[name="pharmacy[prefecture_code]"]': "%3",
+            '[name="pharmacy[address_city]"]': "%4%5",
+            '[name="pharmacy[address_street]"]': "%6%7"
+        }
+    });
+  });

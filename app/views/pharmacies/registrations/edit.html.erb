@@ -1,43 +1,91 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container-login">
+  <h1><%= t('activerecord.attributes.user.edit') %></h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= bootstrap_devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, autofocus: true, autocomplete: 'name', class: 'form-control' %>
+    </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div class="form-group">
+      <%= f.label :postcode %>
+      <%= f.text_field :postcode, autofocus: true, autocomplete: 'postcode', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :prefecture_code %>
+      <%= f.text_field :prefecture_code, collection: JpPrefecture::Prefecture.all, :value_method => :name, include_blank: '都道府県', autofocus: true, autocomplete: 'prefecture_code', class: 'form-control' %>
+    </div>    
+
+    <div class="form-group">
+      <%= f.label :address_city %>
+      <%= f.text_field :address_city, autofocus: true, autocomplete: 'address_city', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :address_street %>
+      <%= f.text_field :address_street, autofocus: true, autocomplete: 'address_street', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :address_building %>
+      <%= f.text_field :address_building, autofocus: true, autocomplete: 'address_building', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :normal_telephone_number %>
+      <%= f.text_field :normal_telephone_number, autofocus: true, autocomplete: 'telephone_number', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :abnormal_telephone_number %>
+      <%= f.text_field :abnormal_telephone_number, autofocus: true, autocomplete: 'telephone_number', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :remarks %>
+      <%= f.text_area :remarks, autofocus: true, autocomplete: 'remarks', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :opinion %>
+      <%= f.text_area :opinion, autofocus: true, autocomplete: 'opinion', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
+
+      <small class="form-text text-muted"><%= t('user.registrations.edit.leave_blank_if_you_don_t_want_to_change_it') %></small>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control'  %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :current_password %>
+      <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
+
+      <small class="form-text text-muted"><%= t('user.registrations.edit.we_need_your_current_password_to_confirm_your_changes') %></small>
+    </div>
+
+    <div class="form-group">
+      <%= f.submit t('activerecord.attributes.user.update'), class: 'btn btn-primary btn-block' %>
+    </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
+  <hr class="devise-link my-5">
+  <div class="form-group">
+    <%= link_to t('activerecord.attributes.user.top_page'), root_path, class: 'btn btn-info btn-block mb-4' %>
+    <%= link_to t('user.registrations.edit.cancel_my_account'), registration_path(resource_name), data: {confirm: t('.are_you_sure')}, method: :delete, class: 'btn btn-danger btn-block' %>
   </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
