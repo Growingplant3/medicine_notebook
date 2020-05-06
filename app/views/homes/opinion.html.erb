@@ -1,0 +1,23 @@
+<div class="container-login">
+  <h2><%= t('.thanks_opinion') %></h2>
+  <table>
+    <thead>
+      <tr>
+        <th><%= t('.age') %></th>
+        <th><%= t('.sex') %></th>
+        <th><%= t('.opinion') %></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.age %></td>
+          <td><%= user.sex_i18n %></td>
+          <td><%= user.opinion %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

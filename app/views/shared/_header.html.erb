@@ -49,6 +49,19 @@
               <% end %>
             </ul>
         </div>
+        <div class="btn-group">
+          <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= t('.other_function') %>
+          </button>
+            <ul class="dropdown-menu dropdown-menu-right">
+              <li class="dropdown-item">
+                <%= link_to t('.every_opinion'), opinion_path, class: 'nav-link' %>
+              </li>
+              <li class="dropdown-item">
+                <%= link_to t('.not_set'), root_path, class: 'nav-link' %>
+              </li>
+            </ul>
+        </div>  
       </div>
     <% else %>
       <div>
@@ -77,7 +90,7 @@
                 <%= link_to t('.pharmacy_sign_in'), new_pharmacy_session_path, class: 'nav-link' %>
               </li>
             </ul>
-        </div>
+        </div>            
       </div>
     <% end %>
   </nav>
@@ -100,7 +113,6 @@
           <h1><%= current_pharmacy.email+ t('.sign_in_every_user') %></h1>
         <% end %>
       <% end %>
-      <%# 次モデル追加部分 %>
     <% end %>
   </nav>
 </header>

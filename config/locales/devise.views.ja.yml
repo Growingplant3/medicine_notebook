@@ -194,6 +194,13 @@ ja:
       all_sign_in: ログイン
       other_function: その他
       not_set: 未設定
+      every_opinion: 皆様の声
+  homes:
+    opinion:
+      thanks_opinion: 頂いた皆様の貴重な御意見に感謝いたします。
+      age: 年齢
+      sex: 性別
+      opinion: ご意見
   pharmacy:
     registrations:
       new:
