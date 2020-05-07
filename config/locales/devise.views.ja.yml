@@ -9,14 +9,14 @@ ja:
         current_password: 現在のパスワード
         current_sign_in_at: 現在のログイン時刻
         current_sign_in_ip: 現在のログインIPアドレス
-        email: Eメール
+        email: メールアドレス
         encrypted_password: 暗号化パスワード
         failed_attempts: 失敗したログイン試行回数
         last_sign_in_at: 最終ログイン時刻
         last_sign_in_ip: 最終ログインIPアドレス
         locked_at: ロック時刻
         password: パスワード
-        password_confirmation: パスワード（確認用）
+        password_confirmation: 確認用パスワード
         remember_created_at: ログイン記憶時刻
         remember_me: ログインを記憶する
         reset_password_sent_at: パスワードリセット送信時刻
@@ -33,6 +33,11 @@ ja:
         update: 更新する
         destroy: 削除する
         sign_out: ログアウト
+      pharmacy:
+        sign_up: 薬局アカウント登録
+        sign_in: 薬局ログイン
+        edit: 薬局アカウント編集
+        forgot_your_password: 薬局パスワードを忘れましたか?
     models:
       user: ユーザ
   user:
@@ -108,7 +113,7 @@ ja:
         update: 更新
         we_need_your_current_password_to_confirm_your_changes: 変更を反映するには現在のパスワードを入力してください
       new:
-        sign_up: アカウント登録
+        sign_up: ユーザー登録
       signed_up: アカウント登録が完了しました。
       signed_up_but_inactive: ログインするためには、アカウントを有効化してください。
       signed_up_but_locked: アカウントが凍結されているためログインできません。
@@ -148,12 +153,12 @@ ja:
         back: 戻る
         didn_t_receive_confirmation_instructions: アカウント確認のメールを受け取っていませんか?
         didn_t_receive_unlock_instructions: アカウントの凍結解除方法のメールを受け取っていませんか?
-        forgot_your_password: パスワードを忘れましたか?
+        forgot_your_password: ユーザーパスワードを忘れましたか?
         sign_in: ログイン
         sign_in_with_provider: "%{provider}でログイン"
         sign_up: アカウント登録
-        already_have_account: "アカウントをお持ちの方"
-        do_not_have_account: "アカウントをお持ちではない方"
+        already_have_account: "ユーザーアカウントをお持ちの方"
+        do_not_have_account: "ユーザーアカウントをお持ちではない方"
       minimum_password_length: "（%{count}字以上）"
     unlocks:
       new:
@@ -183,3 +188,30 @@ ja:
       pharmacy_sign_out: 薬局ログアウト
       pharmacy_sign_up: 薬局新規登録
       pharmacy_sign_in: 薬局ログイン
+      function: 機能一覧
+      config: 設定
+      new_face: 新規登録
+      all_sign_in: ログイン
+      other_function: その他
+      not_set: 未設定
+      every_opinion: 皆様の声
+  homes:
+    opinion:
+      thanks_opinion: 頂いた皆様の貴重な御意見に感謝いたします。
+      age: 年齢
+      sex: 性別
+      opinion: ご意見
+  pharmacy:
+    registrations:
+      new:
+        sign_up: 薬局登録
+      show:
+        name: "薬局名:"
+        address_building: "詳細住所:"
+        normal_telephone_number: "電話番号:"
+        abnormal_telephone_number: "夜間休日対応電話番号:"
+    shared:
+      links:
+        already_have_account: 薬局アカウントをお持ちの方
+        do_not_have_account: 薬局アカウントをお持ちではない方
+        forgot_your_password: 薬局パスワードを忘れましたか?

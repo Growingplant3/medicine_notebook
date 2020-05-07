@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     get 'pharmacies/show' => 'pharmacies/registrations#show'
     delete 'pharmacies/destroy' => 'users/registrations#destroy'
   end
+  get '/opinion', to: 'homes#opinion'
   root 'homes#index'
 end

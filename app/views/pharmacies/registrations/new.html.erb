@@ -1,5 +1,5 @@
 <div class="container-login">
-  <h1><%= t('.sign_up') %></h1>
+  <h1><%= t('activerecord.attributes.pharmacy.sign_up') %></h1>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     <%= bootstrap_devise_error_messages! %>
@@ -19,7 +19,7 @@
       <%= f.password_field :password, autocomplete: 'current-password',class: 'form-control',required: true,minlength: @minimum_password_length,maxlength: '30' %>
 
       <% if @minimum_password_length %>
-        <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
+        <small class="form-text text-muted"><%= t('user.shared.minimum_password_length', count: @minimum_password_length) %></small>
       <% end %>
     </div>
 
@@ -29,7 +29,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.submit t('.sign_up'), class: 'btn btn-primary btn-block' %>
+      <%= f.submit t('pharmacy.registrations.new.sign_up'), class: 'btn btn-primary btn-block' %>
     </div>
   <% end %>
 

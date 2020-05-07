@@ -24,11 +24,6 @@
   padding: 2rem;
 }
 
-// ヘッダー、フッター
-.hf-both {
-  background-color: aqua,
-}
-
 // 「ログインしました」などのフラッシュ用スタイル
 
 .alert-notice {
@@ -37,4 +32,9 @@
 
 .alert-alert {
   @extend .alert-danger;
+}
+
+// ヘッダー、フッターの背景色
+.hf-both {
+  background-color: aqua,
 }
