@@ -5,7 +5,6 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
 
   def show
-    @pharmacy = current_pharmacy
   end
 
   # GET /resource/sign_up
@@ -30,7 +29,10 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
 
   # DELETE /resource
   def destroy
-    @pharmacy = current_pharmacy
+    current_pharmacy.destroy
+    respond_to do |format|
+      format.html { redirect_to new_pharmacy_registration_path, notice: t('pharmacy.registrations.destroy.pharmacy_destory') }
+    end
   end
 
   # GET /resource/cancel

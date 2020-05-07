@@ -38,6 +38,8 @@ ja:
         sign_in: 薬局ログイン
         edit: 薬局アカウント編集
         forgot_your_password: 薬局パスワードを忘れましたか?
+        top_page: トップページへ戻る
+        update: 更新する
     models:
       user: ユーザ
   user:
@@ -142,6 +144,7 @@ ja:
         update: "編集する"
         destroy: "削除する"
         sign_out: "ログアウト"
+        are_you_sure: 本当に削除してもよろしいですか?
     sessions:
       already_signed_out: 既にログアウト済みです。
       new:
@@ -210,6 +213,15 @@ ja:
         address_building: "詳細住所:"
         normal_telephone_number: "電話番号:"
         abnormal_telephone_number: "夜間休日対応電話番号:"
+        update: 更新する
+        destroy: 削除する
+        sign_out: ログアウト
+        are_you_sure: 本当に削除してもよろしいですか?
+      destroy:
+        pharmacy_account_destroy: 薬局アカウントは正常に削除されました。
+      edit:
+        cancel_my_account: アカウント削除
+        are_you_sure: 本当によろしいですか?
     shared:
       links:
         already_have_account: 薬局アカウントをお持ちの方
