@@ -1,0 +1,16 @@
+<%= f.fields_for :accounts do |f| %>
+  <div class="form-group">
+    <%= f.label :week_day0 %>
+    <%= f.checkbox :business, autofocus: true, autocomplete: 'business', class: 'form-control' %>
+  </div>
+    
+  <div class="form-group">
+    <%= f.label :open0 %>
+    <%= f.time_field :open, autofocus: true, autocomplete: 'open', class: 'form-control' %>
+  </div>
+    
+  <div class="form-group">
+    <%= f.label :close0 %>
+    <%= f.checkbox :close, autofocus: true, autocomplete: 'close', class: 'form-control' %>
+  </div>
+<% end %>

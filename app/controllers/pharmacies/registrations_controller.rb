@@ -23,9 +23,17 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+    for seven_days in 0..6 do
+      current_pharmacy.activities.build(week_day: seven_days)
+    end
+    if current_pharmacy.update(pharmacy_params)
+      redirect_to parmacies_show_path
+    else
+      redirect_to edit_pharmacy_registration_path
+    end
+  end
 
   # DELETE /resource
   def destroy
@@ -53,7 +61,7 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion, acitivities_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close]])
   end
 
   # The path used after sign up.
