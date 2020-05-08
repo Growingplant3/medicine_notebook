@@ -25,15 +25,16 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     super
+    unless current_pharmacy.activities.present?
+      for seven_days in 0..6 do
+        current_pharmacy.activities.build(week_day: seven_days)
+      end
+    end
     for seven_days in 0..6 do
-      current_pharmacy.activities.build(week_day: seven_days)
+      current_pharmacy.activities.find_by(week_day: seven_days).save if current_pharmacy.update(pharmacy_params)
+      #binding.pry
     end
-    if current_pharmacy.update(pharmacy_params)
-      current_pharmacy.save
-      pharmacies_show_path
-    else
-      edit_pharmacy_registration_path
-    end
+    pharmacies_show_path
   end
 
   # DELETE /resource
@@ -62,7 +63,7 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:email,:current_password,:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion, acitivities_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close]])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:email,:password,:password_confirmation,:current_password,:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion, acitivities_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close]])
   end
 
   # The path used after sign up.
@@ -80,6 +81,6 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   # end
 
   def pharmacy_params
-    params.require(:pharmacy).permit(:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion, acitivities_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close])
+    params.require(:pharmacy).permit(:email,:password,:password_confirmation,:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion, acitivities_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close])
   end
 end
