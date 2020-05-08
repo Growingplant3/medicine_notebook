@@ -29,9 +29,10 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
       current_pharmacy.activities.build(week_day: seven_days)
     end
     if current_pharmacy.update(pharmacy_params)
-      redirect_to parmacies_show_path
+      current_pharmacy.save
+      pharmacies_show_path
     else
-      redirect_to edit_pharmacy_registration_path
+      edit_pharmacy_registration_path
     end
   end
 
@@ -61,7 +62,7 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion, acitivities_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close]])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:email,:current_password,:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion, acitivities_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close]])
   end
 
   # The path used after sign up.
@@ -77,4 +78,8 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  def pharmacy_params
+    params.require(:pharmacy).permit(:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion, acitivities_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close])
+  end
 end

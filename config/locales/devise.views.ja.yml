@@ -213,7 +213,7 @@ ja:
         address_building: "詳細住所:"
         normal_telephone_number: "電話番号:"
         abnormal_telephone_number: "夜間休日対応電話番号:"
-        update: 更新する
+        update: 編集する
         destroy: 削除する
         sign_out: ログアウト
         are_you_sure: 本当に削除してもよろしいですか?
