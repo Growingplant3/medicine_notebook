@@ -198,12 +198,18 @@ ja:
       other_function: その他
       not_set: 未設定
       every_opinion: 皆様の声
+      history: 開発履歴
   homes:
     opinion:
       thanks_opinion: 頂いた皆様の貴重な御意見に感謝いたします。
       age: 年齢
       sex: 性別
       opinion: ご意見
+    index:
+      search_medicine_notebook: お薬手帳記録検索
+      search_explanation: 過去の処方箋情報が調べられます
+      let_us_go: 使ってみる
+      not_yet: 未定
   pharmacy:
     registrations:
       new:

@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     delete 'users/:id' => 'users/registrations#destroy'
   end
   get '/opinion', to: 'homes#opinion'
+  get '/history', to: 'homes#histroy'
   root 'homes#index'
 end
