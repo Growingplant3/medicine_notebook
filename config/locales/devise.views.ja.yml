@@ -207,8 +207,16 @@ ja:
       opinion: ご意見
     index:
       search_medicine_notebook: お薬手帳記録検索
-      search_explanation: 過去の処方箋情報が調べられます
+      search_medicine_notebook_explanation: 過去の処方箋情報が調べられます
       let_us_go: 使ってみる
+      search_pharmacy: 調剤薬局検索
+      search_pharmacy_explanation: 調剤薬局を検索できます
+      inquire_pharmacy: チャット形式でお薬についての問い合わせができます
+      family_configure: 家族連携
+      family_configure_explanation: ご家族同士でお薬手帳履歴の共有ができます
+      health_record: 体調・服薬管理
+      health_record_explanation: 日々の血圧・脈拍などが記録できます
+      
       not_yet: 未定
   pharmacy:
     registrations:
