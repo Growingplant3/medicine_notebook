@@ -184,10 +184,12 @@ ja:
       application_title: ウェブお薬手帳
       sign_in_every_user: さんがログインしています
       user_account_edit: ユーザーアカウント編集
+      user_account_show: ユーザーアカウント確認
       user_sign_out: ユーザーログアウト
       user_sign_up: ユーザー新規登録
       user_sign_in: ユーザーログイン
       pharmacy_account_edit: 薬局アカウント編集
+      pharmacy_account_show: 薬局アカウント確認
       pharmacy_sign_out: 薬局ログアウト
       pharmacy_sign_up: 薬局新規登録
       pharmacy_sign_in: 薬局ログイン
@@ -196,9 +198,15 @@ ja:
       new_face: 新規登録
       all_sign_in: ログイン
       other_function: その他
-      not_set: 未設定
       every_opinion: 皆様の声
       history: 開発履歴
+      search_medicine_notebook: お薬手帳記録検索
+      search_pharmacy: 調剤薬局検索
+      chat_support: チャット問い合わせ
+      family_configure: 家族連携
+      health_record: 体調・服薬管理
+      attention: アプリケーションの利用には新規登録、またはログインが必要です。
+      not_set: 未設定
   homes:
     opinion:
       thanks_opinion: 頂いた皆様の貴重な御意見に感謝いたします。
@@ -216,7 +224,8 @@ ja:
       family_configure_explanation: ご家族同士でお薬手帳履歴の共有ができます
       health_record: 体調・服薬管理
       health_record_explanation: 日々の血圧・脈拍などが記録できます
-      
+      chat_support: チャット問い合わせ
+      chat_support_explanation: ユーザーからのチャット問い合わせの内容について、確認・返信ができます
       not_yet: 未定
   pharmacy:
     registrations:
