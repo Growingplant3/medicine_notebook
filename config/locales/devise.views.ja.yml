@@ -40,6 +40,15 @@ ja:
         forgot_your_password: 薬局パスワードを忘れましたか?
         top_page: トップページへ戻る
         update: 更新する
+        search_function: 調剤薬局検索
+        enter_pharmacy_name: 検索したい薬局の名前を入力
+        enter_pharmacy_postcode: 検索したい薬局の郵便番号を入力
+        enter_pharmacy_email: 検索したい薬局のメールアドレスを入力
+        search: 検索
+        all_pharmacies: 薬局一覧
+        name: 薬局名
+        postcode: 郵便番号
+        email: メールアドレス
     models:
       user: ユーザ
   user:

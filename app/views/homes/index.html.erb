@@ -18,7 +18,7 @@
       <p><%= t('.inquire_pharmacy')%></p>
     <% end %>
     <% if user_signed_in? %>
-      <a class ="btn btn-primary btn-lg" href="#" role="button"><%= t('.let_us_go') %></a>
+      <a class ="btn btn-primary btn-lg" href="pharmacies/search/" role="button"><%= t('.let_us_go') %></a>
     <% elsif pharmacy_signed_in? %>
       <a class ="btn btn-primary btn-lg" href="#" role="button"><%= t('.let_us_go') %></a>
     <% elsif %>

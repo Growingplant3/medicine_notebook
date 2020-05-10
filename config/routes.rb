@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   }
   devise_scope :pharmacy do
     get 'pharmacies/show' => 'pharmacies/registrations#show'
+    get 'pharmacies/search' => 'pharmacies/registrations#search'
     delete 'pharmacies/:id' => 'users/registrations#destroy'
   end
   devise_scope :user do

@@ -7,6 +7,11 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   def show
   end
 
+  def search
+    @q = Pharmacy.ransack(params[:q])
+    @pharmacies = @q.result(distinct: true)
+  end
+
   # GET /resource/sign_up
   # def new
   #   super
