@@ -38,6 +38,17 @@ ja:
         sign_in: 薬局ログイン
         edit: 薬局アカウント編集
         forgot_your_password: 薬局パスワードを忘れましたか?
+        top_page: トップページへ戻る
+        update: 更新する
+        search_function: 調剤薬局検索
+        enter_pharmacy_name: 検索したい薬局の名前を入力
+        enter_pharmacy_postcode: 検索したい薬局の郵便番号を入力
+        enter_pharmacy_email: 検索したい薬局のメールアドレスを入力
+        search: 検索
+        all_pharmacies: 薬局一覧
+        name: 薬局名
+        postcode: 郵便番号
+        email: メールアドレス
     models:
       user: ユーザ
   user:
@@ -142,6 +153,7 @@ ja:
         update: "編集する"
         destroy: "削除する"
         sign_out: "ログアウト"
+        are_you_sure: 本当に削除してもよろしいですか?
     sessions:
       already_signed_out: 既にログアウト済みです。
       new:
@@ -181,10 +193,12 @@ ja:
       application_title: ウェブお薬手帳
       sign_in_every_user: さんがログインしています
       user_account_edit: ユーザーアカウント編集
+      user_account_show: ユーザーアカウント確認
       user_sign_out: ユーザーログアウト
       user_sign_up: ユーザー新規登録
       user_sign_in: ユーザーログイン
       pharmacy_account_edit: 薬局アカウント編集
+      pharmacy_account_show: 薬局アカウント確認
       pharmacy_sign_out: 薬局ログアウト
       pharmacy_sign_up: 薬局新規登録
       pharmacy_sign_in: 薬局ログイン
@@ -193,14 +207,35 @@ ja:
       new_face: 新規登録
       all_sign_in: ログイン
       other_function: その他
-      not_set: 未設定
       every_opinion: 皆様の声
+      history: 開発履歴
+      search_medicine_notebook: お薬手帳記録検索
+      search_pharmacy: 調剤薬局検索
+      chat_support: チャット問い合わせ
+      family_configure: 家族連携
+      health_record: 体調・服薬管理
+      attention: アプリケーションの利用には新規登録、またはログインが必要です。
+      not_set: 未設定
   homes:
     opinion:
       thanks_opinion: 頂いた皆様の貴重な御意見に感謝いたします。
       age: 年齢
       sex: 性別
       opinion: ご意見
+    index:
+      search_medicine_notebook: お薬手帳記録検索
+      search_medicine_notebook_explanation: 過去の処方箋情報が調べられます
+      let_us_go: 使ってみる
+      search_pharmacy: 調剤薬局検索
+      search_pharmacy_explanation: 調剤薬局を検索できます
+      inquire_pharmacy: チャット形式でお薬についての問い合わせができます
+      family_configure: 家族連携
+      family_configure_explanation: ご家族同士でお薬手帳履歴の共有ができます
+      health_record: 体調・服薬管理
+      health_record_explanation: 日々の血圧・脈拍などが記録できます
+      chat_support: チャット問い合わせ
+      chat_support_explanation: ユーザーからのチャット問い合わせの内容について、確認・返信ができます
+      not_yet: 未定
   pharmacy:
     registrations:
       new:
@@ -210,6 +245,15 @@ ja:
         address_building: "詳細住所:"
         normal_telephone_number: "電話番号:"
         abnormal_telephone_number: "夜間休日対応電話番号:"
+        update: 編集する
+        destroy: 削除する
+        sign_out: ログアウト
+        are_you_sure: 本当に削除してもよろしいですか?
+      destroy:
+        pharmacy_account_destroy: 薬局アカウントは正常に削除されました。
+      edit:
+        cancel_my_account: アカウント削除
+        are_you_sure: 本当によろしいですか?
     shared:
       links:
         already_have_account: 薬局アカウントをお持ちの方

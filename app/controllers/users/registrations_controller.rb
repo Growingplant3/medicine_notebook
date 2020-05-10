@@ -5,7 +5,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
 
   def show
-    @user = current_user
   end
 
   # GET /resource/sign_up
@@ -30,9 +29,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # DELETE /resource
   def destroy
-    @user = current_user
+    current_user.destroy
+    respond_to do |format|
+      format.html { redirect_to root_path, notice: 'User was successfully destroyed.' }
+    end
   end
-
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
   # in to be expired now. This is useful if the user wants to

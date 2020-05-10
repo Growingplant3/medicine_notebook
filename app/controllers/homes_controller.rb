@@ -5,4 +5,7 @@ class HomesController < ApplicationController
   def opinion
     @users = User.all
   end
+
+  def history
+  end
 end

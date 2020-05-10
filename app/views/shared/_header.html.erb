@@ -12,17 +12,26 @@
           </button>
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item">
-                <%= link_to t('.not_set'), root_path, class: 'nav-link' %>
+                <%= link_to t('.search_medicine_notebook'), root_path, class: 'nav-link' %>
               </li>
               <li class="dropdown-item">
-                <%= link_to t('.not_set'), root_path, class: 'nav-link' %>
+                <%= link_to t('.search_pharmacy'), pharmacies_search_path, class: 'nav-link' %>
               </li>
               <% if user_signed_in? %>
+                <li class="dropdown-item">
+                  <%= link_to t('.family_configure'), root_path, class: 'nav-link' %>
+                </li>
+                <li class="dropdown-item">
+                  <%= link_to t('.health_record'), root_path, class: 'nav-link' %>
+                </li>
                 <li class="dropdown-item">
                   <%= link_to t('.user_sign_out'), destroy_user_session_path, method: :delete, class: 'nav-link' %>
                 </li>
               <% end %>
               <% if pharmacy_signed_in? %>
+                <li class="dropdown-item">
+                  <%= link_to t('.chat_support'), root_path, class: 'nav-link' %>
+                </li>
                 <li class="dropdown-item">
                   <%= link_to t('.pharmacy_sign_out'), destroy_pharmacy_session_path, method: :delete, class: 'nav-link' %>
                 </li>
@@ -34,17 +43,20 @@
             <%= t('.config') %>
           </button>
             <ul class="dropdown-menu dropdown-menu-right">
-              <li class="dropdown-item">
-                <%= link_to t('.not_set'), root_path, class: 'nav-link' %>
-              </li>
               <% if user_signed_in? %>
                 <li class="dropdown-item">
                   <%= link_to t('.user_account_edit'), edit_user_registration_path, class: 'nav-link' %>
+                </li>
+                <li class="dropdown-item">
+                  <%= link_to t('.user_account_show'), users_show_path, class: 'nav-link' %>
                 </li>
               <% end %>
               <% if pharmacy_signed_in? %>
                 <li class="dropdown-item">
                   <%= link_to t('.pharmacy_account_edit'), edit_pharmacy_registration_path, class: 'nav-link' %>
+                </li>
+                <li class="dropdown-item">
+                  <%= link_to t('.pharmacy_account_show'), pharmacies_show_path, class: 'nav-link' %>
                 </li>
               <% end %>
             </ul>
@@ -58,7 +70,7 @@
                 <%= link_to t('.every_opinion'), opinion_path, class: 'nav-link' %>
               </li>
               <li class="dropdown-item">
-                <%= link_to t('.not_set'), root_path, class: 'nav-link' %>
+                <%= link_to t('.history'), history_path, class: 'nav-link' %>
               </li>
             </ul>
         </div>  
@@ -97,7 +109,7 @@
 
   <nav class="navbar navbar-expand navbar-light">
     <% unless user_signed_in? || pharmacy_signed_in? %>
-      <h2>アプリケーションの利用には新規登録、またはログインが必要です。</h2>
+      <h2><%= t('.attention') %></h2>
     <% else %>
       <% if user_signed_in? %>
         <% if current_user.name.present? %>

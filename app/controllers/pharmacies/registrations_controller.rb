@@ -5,7 +5,11 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
 
   def show
-    @pharmacy = current_pharmacy
+  end
+
+  def search
+    @q = Pharmacy.ransack(params[:q])
+    @pharmacies = @q.result(distinct: true)
   end
 
   # GET /resource/sign_up
@@ -24,13 +28,26 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   # end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    super
+    unless current_pharmacy.activities.present?
+      for seven_days in 0..6 do
+        current_pharmacy.activities.build(week_day: seven_days)
+      end
+    end
+    for seven_days in 0..6 do
+      current_pharmacy.activities.find_by(week_day: seven_days).save if current_pharmacy.update(pharmacy_params)
+      #binding.pry
+    end
+    pharmacies_show_path
+  end
 
   # DELETE /resource
   def destroy
-    @pharmacy = current_pharmacy
+    current_pharmacy.destroy
+    respond_to do |format|
+      format.html { redirect_to new_pharmacy_registration_path, notice: t('pharmacy.registrations.destroy.pharmacy_destory') }
+    end
   end
 
   # GET /resource/cancel
@@ -51,7 +68,7 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:email,:password,:password_confirmation,:current_password,:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion, acitivities_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close]])
   end
 
   # The path used after sign up.
@@ -67,4 +84,8 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+  def pharmacy_params
+    params.require(:pharmacy).permit(:email,:password,:password_confirmation,:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion, acitivities_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close])
+  end
 end
