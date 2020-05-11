@@ -1,0 +1,33 @@
+<div class="container-login">
+  <h2>体調記録</h2>
+
+  <div class="form-group">
+    <%= form_with mode:@condition do |f| %>
+      <%= f.label :収縮期血圧 %></br>
+      <span>0</span><span style="float: right" id="value">300</span>
+      <%= f.range_field(:systolic_blood_pressure, in: 0..300) %>
+
+      <script>
+        var elem = document.getElementById('range');
+        var target = document.getElementById('value');
+        var rangeValue = function (elem, target) {
+          return function(evt){
+            target.innerHTML = elem.value;
+          }
+        }
+        elem.addEventListener('input', rangeValue(elem, target));
+      </script>
+    
+      <div class="form-group">
+        <%= f.submit "更新する", class: 'btn btn-primary btn-block' %>
+      </div>
+
+    <% end %>
+  </div>
+
+  <hr class="devise-link my-5">
+  <div class="form-group">
+  <%= link_to "確認へ移動", condition_path, class: 'btn btn-success btn-block mb-4' %>
+    <%= link_to t('activerecord.attributes.pharmacy.top_page'), root_path, class: 'btn btn-info btn-block mb-4' %>
+  </div>
+</div>

@@ -1,9 +1,25 @@
 <div class="container-login">
   <h2>日々の変動</h2>
+  <p>ここにグラフを挿入</p>
+
+  <tbody>
+    <% @conditions.each do |condition| %>
+      <tr>
+        <td><%= condition.id %></td>
+        <td><%= condition.user_id %></td>
+        <td><%= condition.record_time %></td>
+        <td><%= condition.systolic_blood_pressure%></td>
+        <td><%= condition.diastolic_blood_pressure %></td>
+        <td><%= condition.pulse %></td>
+        <td><%= condition.blood_sugar %></td>
+        <td><%= condition.attached_comment %></td>
+      </tr>
+    <% end %>
+  </tbody>
 
   <hr class="devise-link my-5">
   <div class="form-group">
-    <%= link_to "入力へ移動", create_path, class: 'btn btn-success btn-block mb-4' %>
+    <%= link_to "入力へ移動", condition_edit_path, class: 'btn btn-success btn-block mb-4' %>
     <%= link_to t('activerecord.attributes.pharmacy.top_page'), root_path, class: 'btn btn-info btn-block mb-4' %>
   </div>
 </div>

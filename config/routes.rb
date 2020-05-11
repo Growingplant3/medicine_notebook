@@ -19,6 +19,6 @@ Rails.application.routes.draw do
   get '/opinion', to: 'homes#opinion'
   get '/history', to: 'homes#histroy'
   get '/condition', to: 'conditions#condition'
-  get '/create', to: 'conditions#create'
+  get '/condition/edit', to: 'conditions#edit'
   root 'homes#index'
 end
