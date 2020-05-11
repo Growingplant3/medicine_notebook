@@ -24,23 +24,11 @@ ActiveRecord::Schema.define(version: 2020_05_11_060010) do
 
   create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id"
-    t.time "condition_record_time"
-    t.integer "morning_systolic_blood_pressure"
-    t.integer "morning_diastolic_blood_pressure"
-    t.integer "afternoon_systolic_blood_pressure"
-    t.integer "afternoon_diastolic_blood_pressure"
-    t.integer "evening_systolic_blood_pressure"
-    t.integer "evening_diastolic_blood_pressure"
-    t.integer "sleep_systolic_blood_pressure"
-    t.integer "sleep_diastolic_blood_pressure"
-    t.integer "morning_pulse"
-    t.integer "afternoon_pulse"
-    t.integer "evening_pulse"
-    t.integer "sleep_pulse"
-    t.integer "morning_blood_sugar"
-    t.integer "afternoon_blood_sugar"
-    t.integer "evening_blood_sugar"
-    t.integer "sleep_blood_sugar"
+    t.time "record_time"
+    t.integer "systolic_blood_pressure"
+    t.integer "diastolic_blood_pressure"
+    t.integer "pulse"
+    t.integer "blood_sugar"
     t.text "attached_comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
