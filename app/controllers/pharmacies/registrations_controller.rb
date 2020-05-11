@@ -86,7 +86,7 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
 
   def activity_params
     params.require(:activities).map do |param|
-      ActionController::Parameters.new(param.to_hash).permit(:id,:week_day,:business,:open,:close)
+      ActionController::Parameters.new(param.to_hash).permit(activities[:business],activities[:open],activities[:close])
     end
   end
 end
