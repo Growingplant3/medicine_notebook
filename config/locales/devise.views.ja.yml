@@ -34,6 +34,29 @@ ja:
         destroy: 削除する
         sign_out: ログアウト
       pharmacy:
+        confirmation_sent_at: パスワード確認送信時刻
+        confirmation_token: パスワード確認用トークン
+        confirmed_at: パスワード確認時刻
+        created_at: 作成日
+        current_password: 現在のパスワード
+        current_sign_in_at: 現在のログイン時刻
+        current_sign_in_ip: 現在のログインIPアドレス
+        email: メールアドレス
+        encrypted_password: 暗号化パスワード
+        failed_attempts: 失敗したログイン試行回数
+        last_sign_in_at: 最終ログイン時刻
+        last_sign_in_ip: 最終ログインIPアドレス
+        locked_at: ロック時刻
+        password: パスワード
+        password_confirmation: 確認用パスワード
+        remember_created_at: ログイン記憶時刻
+        remember_me: ログインを記憶する
+        reset_password_sent_at: パスワードリセット送信時刻
+        reset_password_token: パスワードリセット用トークン
+        sign_in_count: ログイン回数
+        unconfirmed_email: 未確認Eメール
+        unlock_token: ロック解除用トークン
+        updated_at: 更新日
         sign_up: 薬局アカウント登録
         sign_in: 薬局ログイン
         edit: 薬局アカウント編集
@@ -232,7 +255,7 @@ ja:
       family_configure: 家族連携
       family_configure_explanation: ご家族同士でお薬手帳履歴の共有ができます
       health_record: 体調・服薬管理
-      health_record_explanation: 日々の血圧・脈拍などが記録できます
+      health_record_explanation: 日々の血圧やお薬の服用状況などが記録できます
       chat_support: チャット問い合わせ
       chat_support_explanation: ユーザーからのチャット問い合わせの内容について、確認・返信ができます
       not_yet: 未定

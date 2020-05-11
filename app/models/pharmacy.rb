@@ -15,6 +15,6 @@ class Pharmacy < ApplicationRecord
     self.prefecture_code = JpPrefecture::Prefecture.find(name: prefecture_name).code
   end
 
-  has_many :activities
+  has_many :activities, dependent: :delete_all
   accepts_nested_attributes_for :activities, allow_destroy: true
 end
