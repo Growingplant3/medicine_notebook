@@ -1,118 +1,14 @@
-<%= fields_for :acitivity_0 do |f| %>
-  <div class="form-group">
-    <%= f.label :week_day0 %>
-    <%= f.check_box :business, autofocus: true, autocomplete: 'business', class: 'form-control' %>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :open0 %>
-    <%= f.time_field :open, autofocus: true, autocomplete: 'open', class: 'form-control' %>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :close0 %>
-    <%= f.time_field :close, autofocus: true, autocomplete: 'close', class: 'form-control' %>
-  </div>
-<% end %>
+<%= f.fields_for :activities, @pharmacy_activities do |form| %>
+  <% 7.time do %>
+    <div class="form-group">
+      <%= form.label :week_day %>
+      <%= form.check_box :business, autofocus: true, autocomplete: 'business', class: 'form-control' %>
 
-<%= fields_for :acitivity_1 do |f| %>
-  <div class="form-group">
-    <%= f.label :week_day1 %>
-    <%= f.check_box :business, autofocus: true, autocomplete: 'business', class: 'form-control' %>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :open1 %>
-    <%= f.time_field :open, autofocus: true, autocomplete: 'open', class: 'form-control' %>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :close1 %>
-    <%= f.time_field :close, autofocus: true, autocomplete: 'close', class: 'form-control' %>
-  </div>
-<% end %>
+      <%= form.label :open %>
+      <%= form.time_field :open, autofocus: true, autocomplete: 'open', class: 'form-control' %>
 
-<%= fields_for :acitivity_2 do |f| %>
-  <div class="form-group">
-    <%= f.label :week_day2 %>
-    <%= f.check_box :business, autofocus: true, autocomplete: 'business', class: 'form-control' %>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :open2 %>
-    <%= f.time_field :open, autofocus: true, autocomplete: 'open', class: 'form-control' %>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :close2 %>
-    <%= f.time_field :close, autofocus: true, autocomplete: 'close', class: 'form-control' %>
-  </div>
-<% end %>
-
-<%= fields_for :acitivity_3 do |f| %>
-  <div class="form-group">
-    <%= f.label :week_day3 %>
-    <%= f.check_box :business, autofocus: true, autocomplete: 'business', class: 'form-control' %>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :open3 %>
-    <%= f.time_field :open, autofocus: true, autocomplete: 'open', class: 'form-control' %>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :close3 %>
-    <%= f.time_field :close, autofocus: true, autocomplete: 'close', class: 'form-control' %>
-  </div>
-<% end %>
-
-<%= fields_for :acitivity_4 do |f| %>
-  <div class="form-group">
-    <%= f.label :week_day4 %>
-    <%= f.check_box :business, autofocus: true, autocomplete: 'business', class: 'form-control' %>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :open4 %>
-    <%= f.time_field :open, autofocus: true, autocomplete: 'open', class: 'form-control' %>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :close4 %>
-    <%= f.time_field :close, autofocus: true, autocomplete: 'close', class: 'form-control' %>
-  </div>
-<% end %>
-
-<%= fields_for :acitivity_5 do |f| %>
-  <div class="form-group">
-    <%= f.label :week_day5 %>
-    <%= f.check_box :business, autofocus: true, autocomplete: 'business', class: 'form-control' %>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :open5 %>
-    <%= f.time_field :open, autofocus: true, autocomplete: 'open', class: 'form-control' %>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :close5 %>
-    <%= f.time_field :close, autofocus: true, autocomplete: 'close', class: 'form-control' %>
-  </div>
-<% end %>
-
-<%= fields_for :acitivity_6 do |f| %>
-  <div class="form-group">
-    <%= f.label :week_day6 %>
-    <%= f.check_box :business, autofocus: true, autocomplete: 'business', class: 'form-control' %>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :open6 %>
-    <%= f.time_field :open, autofocus: true, autocomplete: 'open', class: 'form-control' %>
-  </div>
-    
-  <div class="form-group">
-    <%= f.label :close6 %>
-    <%= f.time_field :close, autofocus: true, autocomplete: 'close', class: 'form-control' %>
-  </div>
+      <%= form.label :close %>
+      <%= form.time_field :close, autofocus: true, autocomplete: 'close', class: 'form-control' %>
+    </div>
+  <% end %>
 <% end %>

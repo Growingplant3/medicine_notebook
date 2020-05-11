@@ -67,7 +67,7 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:email,:password,:password_confirmation,:current_password,:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion, acitivity_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close]])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:email,:password,:password_confirmation,:current_password,:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion, activities_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close]])
   end
 
   # The path used after sign up.
@@ -85,12 +85,8 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   # end
 
   def activity_params
-    params.require(:activity_0).permit(:business,:open,:close)
-    params.require(:activity_1).permit(:business,:open,:close)
-    params.require(:activity_2).permit(:business,:open,:close)
-    params.require(:activity_3).permit(:business,:open,:close)
-    params.require(:activity_4).permit(:business,:open,:close)
-    params.require(:activity_5).permit(:business,:open,:close)
-    params.require(:activity_6).permit(:business,:open,:close)
+    params.require(:activities).map do |param|
+      ActionController::Parameters.new(param.to_hash).permit(:id,:week_day,:business,:open,:close)
+    end
   end
 end

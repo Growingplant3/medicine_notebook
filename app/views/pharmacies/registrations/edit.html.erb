@@ -44,7 +44,18 @@
       <%= f.text_field :abnormal_telephone_number, autofocus: true, autocomplete: 'telephone_number', class: 'form-control' %>
     </div>
 
-    <%= render 'fields' %>
+    <%= f.fields_for :activities do |form| %>
+      <div class="form-group">
+        <%= form.label :week_day %>
+        <%= form.check_box :business, autofocus: true, autocomplete: 'business', class: 'form-control' %>
+    
+        <%= form.label :open %>
+        <%= form.time_field :open, autofocus: true, autocomplete: 'open', class: 'form-control' %>
+    
+        <%= form.label :close %>
+        <%= form.time_field :close, autofocus: true, autocomplete: 'close', class: 'form-control' %>
+      </div>
+    <% end %>
 
     <div class="form-group">
       <%= f.label :remarks %>
