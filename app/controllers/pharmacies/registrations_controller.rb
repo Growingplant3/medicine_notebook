@@ -23,18 +23,17 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    if current_pharmacy.activities.count == 0
+      for seven_days in 0..6 do
+        current_pharmacy.activities.build(week_day: seven_days).save
+      end
+    end
+  end
 
   # PUT /resource
   def update
     super
-    unless current_pharmacy.activities.present?
-      for seven_days in 0..6 do
-        current_pharmacy.activities.build(week_day: seven_days)
-      end
-    end
     for seven_days in 0..6 do
       current_pharmacy.activities.find_by(week_day: seven_days).update_attributes!(activity_params)
     end
@@ -85,8 +84,8 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   # end
 
   def activity_params
-    params.require(:activities).map do |param|
-      ActionController::Parameters.new(param.to_hash).permit(activities[:business],activities[:open],activities[:close])
+    params.require(:activities_attributes).map do |param|
+      ActionController::Parameters.new(param.to_hash).permit(:id,:business,:open,:close)
     end
   end
 end
