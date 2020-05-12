@@ -24,6 +24,8 @@ gem 'jquery-rails'
 # デバッグ
 gem 'pry-rails'
 gem 'pry-byebug'
+gem 'better_errors'
+gem 'binding_of_caller'
 
 # Bootstrap
 gem 'bootstrap', '~> 4.1.3'
