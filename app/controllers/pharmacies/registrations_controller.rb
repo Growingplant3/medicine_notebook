@@ -80,7 +80,13 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  def pharmacy_params
-    params.require(:pharmacy).permit(:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion,:email,:password,:password_confirmation,:current_password,activities_attributes:[:id,:business,:open,:close])
+  def activity_params
+    params.require(:activity_0).permit(:business,:open,:close)
+    params.require(:activity_1).permit(:business,:open,:close)
+    params.require(:activity_2).permit(:business,:open,:close)
+    params.require(:activity_3).permit(:business,:open,:close)
+    params.require(:activity_4).permit(:business,:open,:close)
+    params.require(:activity_5).permit(:business,:open,:close)
+    params.require(:activity_6).permit(:business,:open,:close)
   end
 end
