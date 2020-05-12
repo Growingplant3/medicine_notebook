@@ -35,7 +35,7 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   def update
     super
     for seven_days in 0..6 do
-      current_pharmacy.activities.find_by(week_day: seven_days).update_attributes!(activity_params)
+      current_pharmacy.activities.find_by(week_day: seven_days).update(activity_params)
     end
     pharmacies_show_path
   end
@@ -66,7 +66,7 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:email,:password,:password_confirmation,:current_password,:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion, activities_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close]])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:email,:password,:password_confirmation,:current_password,:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion,activities_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close]])
   end
 
   # The path used after sign up.
@@ -84,8 +84,6 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   # end
 
   def activity_params
-    params.require(:activities_attributes).map do |param|
-      ActionController::Parameters.new(param.to_hash).permit(:id,:business,:open,:close)
-    end
+    params.require(:pharmacy).permit(:email,:password,:password_confirmation,:current_password,:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:abnormal_telephone_number,:remarks,:opinion,activities_attributes:[:business,:open,:close,:id])
   end
 end

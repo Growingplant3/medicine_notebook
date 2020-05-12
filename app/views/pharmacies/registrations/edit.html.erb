@@ -44,7 +44,7 @@
       <%= f.text_field :abnormal_telephone_number, autofocus: true, autocomplete: 'telephone_number', class: 'form-control' %>
     </div>
 
-    <%= f.fields_for :activities_attributes do |form| %>
+    <%= f.fields_for :activities do |form| %>
       <div class="form-group">
         <%= form.label :week_day %>
         <%= form.check_box :business, autofocus: true, autocomplete: 'business', class: 'form-control' %>
