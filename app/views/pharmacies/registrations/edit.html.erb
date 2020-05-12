@@ -1,7 +1,7 @@
 <div class="container-login">
   <h1><%= t('activerecord.attributes.user.edit') %></h1>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= nested_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= bootstrap_devise_error_messages! %>
 
     <div class="form-group">
@@ -44,6 +44,7 @@
       <%= f.text_field :abnormal_telephone_number, autofocus: true, autocomplete: 'telephone_number', class: 'form-control' %>
     </div>
 
+    <a>開局時間</a>
     <%= f.fields_for :activities do |form| %>
       <div class="form-group">
         <%= form.label :week_day %>

@@ -7,6 +7,7 @@
 //= require bootstrap-sprockets
 
 //= require jquery.jpostal
+//= require jquery_nested_form
 $(function(){
   $('input[name="user[postcode]"]').jpostal({
       postcode : [
