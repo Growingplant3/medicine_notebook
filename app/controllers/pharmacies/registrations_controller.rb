@@ -33,11 +33,8 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
 
   # PUT /resource
   def update
-    super
-    for seven_days in 0..6 do
-      current_pharmacy.activities.find_by(week_day: seven_days).update(activity_params)
-    end
-    pharmacies_show_path
+    current_pharmacy.update(pharmacy_params)
+    redirect_to pharmacies_show_path
   end
 
   # DELETE /resource
@@ -83,7 +80,7 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  def activity_params
-    params.require(:pharmacy).permit(:email,:password,:password_confirmation,:current_password,:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:abnormal_telephone_number,:remarks,:opinion,activities_attributes:[:business,:open,:close,:id])
+  def pharmacy_params
+    params.require(:pharmacy).permit(:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion,:email,:password,:password_confirmation,:current_password,activities_attributes:[:id,:business,:open,:close])
   end
 end
