@@ -5,6 +5,7 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
 
   def show
+    @activities = current_pharmacy.activities
   end
 
   def search
@@ -32,10 +33,6 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   end
 
   # PUT /resource
-  def update
-    current_pharmacy.update(pharmacy_params)
-    redirect_to pharmacies_show_path
-  end
 
   # DELETE /resource
   def destroy
@@ -80,13 +77,7 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  def activity_params
-    params.require(:activity_0).permit(:business,:open,:close)
-    params.require(:activity_1).permit(:business,:open,:close)
-    params.require(:activity_2).permit(:business,:open,:close)
-    params.require(:activity_3).permit(:business,:open,:close)
-    params.require(:activity_4).permit(:business,:open,:close)
-    params.require(:activity_5).permit(:business,:open,:close)
-    params.require(:activity_6).permit(:business,:open,:close)
+  def update_resource(resource, params)
+    resource.update_without_current_password(params)
   end
 end

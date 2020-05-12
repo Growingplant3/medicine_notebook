@@ -42,6 +42,19 @@
   </div>
 
   <div class="form-gruop">
+    <strong>開局時間:</strong></br>
+    <% @activities.each do |a| %>
+      <%= a.business %>
+      <% if a.open.present? %>
+        <%= a.open.hour %>:<%= a.open.min %>〜
+      <% end %>
+      <% if a.close.present? %>
+        <%= a.close.hour %>:<%= a.close.min %>
+      <% end %></br>
+    <% end %>
+  </div>
+
+  <div class="form-gruop">
     <strong><%= t('user.registrations.show.remarks') %></strong>
     <%= current_pharmacy.remarks %>
   </div>
