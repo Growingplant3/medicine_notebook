@@ -63,11 +63,7 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-<<<<<<< HEAD
     devise_parameter_sanitizer.permit(:account_update, keys: [:email,:password,:password_confirmation,:current_password,:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion,activities_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close]])
-=======
-    devise_parameter_sanitizer.permit(:account_update, keys: [:email,:password,:password_confirmation,:current_password,:name,:postcode,:prefecture_code,:address_city,:address_street,:address_building,:normal_telephone_number,:abnormal_telephone_number,:remarks,:opinion, acitivity_attributes: [:id, :pharmacy_id, :week_day, :business, :open, :close]])
->>>>>>> parent of 59bc009... controller修正中5
   end
 
   # The path used after sign up.
