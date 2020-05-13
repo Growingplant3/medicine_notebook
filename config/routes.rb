@@ -21,5 +21,6 @@ Rails.application.routes.draw do
   get '/history', to: 'homes#histroy'
   get '/condition', to: 'conditions#index'
   get '/condition/edit', to: 'conditions#edit'
+  post '/condition', to: 'conditions#create'
   root 'homes#index'
 end
