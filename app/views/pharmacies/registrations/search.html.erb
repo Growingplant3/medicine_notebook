@@ -1,24 +1,26 @@
 <div class="container-login">
-  <h2><%= t('activerecord.attributes.pharmacy.search_function') %></h2>
-  <%= search_form_for(@q, url:pharmacies_search_path) do |f| %>
-    <%= f.label :name, t('activerecord.attributes.pharmacy.enter_pharmacy_name') %>
-    <%= f.search_field :name_cont %>
+  <div class="mb-3">
+    <h2><%= t('activerecord.attributes.pharmacy.search_function') %></h2>
+    <%= search_form_for(@q, url:pharmacies_search_path) do |f| %>
+      <%= f.label :name, t('activerecord.attributes.pharmacy.enter_pharmacy_name') %>
+      <%= f.search_field :name_cont %>
 
-    <%= f.label :name, t('activerecord.attributes.pharmacy.enter_pharmacy_postcode') %>
-    <%= f.search_field :postcode_cont %>
+      <%= f.label :name, t('activerecord.attributes.pharmacy.enter_pharmacy_postcode') %>
+      <%= f.search_field :normal_telephone_number_cont %>
 
-    <%= f.label :email, t('activerecord.attributes.pharmacy.enter_pharmacy_email') %>
-    <%= f.search_field :email_cont %>
+      <%= f.label :email, t('activerecord.attributes.pharmacy.enter_pharmacy_email') %>
+      <%= f.search_field :email_cont %>
 
-    <%= f.submit t('activerecord.attributes.pharmacy.search') %>
-  <% end %>
+      <%= f.submit t('activerecord.attributes.pharmacy.search') %>
+    <% end %>
+  </div>
 
   <h2><%= t('activerecord.attributes.pharmacy.all_pharmacies') %></h2>
-  <table>
-    <thead>
+  <table class="table">
+    <thead class="thead-dark">
       <tr>
         <th><%= t('activerecord.attributes.pharmacy.name') %></th>
-        <th><%= t('activerecord.attributes.pharmacy.postcode') %></th>
+        <th><%= t('activerecord.attributes.pharmacy.normal_telephone_number') %></th>
         <th><%= t('activerecord.attributes.pharmacy.email') %></th>
         <th colspan="3"></th>
       </tr>
@@ -27,8 +29,8 @@
     <tbody>
       <% @pharmacies.each do |pharmacy| %>
         <tr>
-          <td><%= pharmacy.name %></td>
-          <td><%= pharmacy.postcode %></td>
+          <td><%= link_to pharmacy.name, pharmacies_show_path(@pharmacy) %></td>
+          <td><%= pharmacy.normal_telephone_number %></td>
           <td><%= pharmacy.email %></td>
         </tr>
       <% end %>

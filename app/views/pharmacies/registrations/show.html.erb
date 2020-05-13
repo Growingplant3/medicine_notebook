@@ -3,52 +3,67 @@
 
   <div class="form-gruop">
     <strong><%= t('pharmacy.registrations.show.name') %></strong> 
-    <%= current_pharmacy.name %>
+    <%= @pharmacy.name %>
   </div>
 
   <div class="form-gruop">
     <strong><%= t('user.registrations.show.postcode') %></strong>
-    <%= current_pharmacy.postcode%>
+    <%= @pharmacy.postcode %>
   </div>
 
   <div class="form-gruop">
     <strong><%= t('user.registrations.show.prefecture_code') %></strong>
-    <%= current_pharmacy.prefecture_code %>
+    <%= @pharmacy.prefecture_code %>
   </div>
 
   <div class="form-gruop">
     <strong><%= t('user.registrations.show.address_city') %></strong>
-    <%= current_pharmacy.address_city %>
+    <%= @pharmacy.address_city %>
   </div>
 
   <div class="form-gruop">
     <strong><%= t('user.registrations.show.address_street') %></strong>
-    <%= current_pharmacy.address_street %>
+    <%= @pharmacy.address_street %>
   </div>
 
   <div class="form-gruop">
     <strong><%= t('pharmacy.registrations.show.address_building') %></strong>
-    <%= current_pharmacy.address_building %>
+    <%= @pharmacy.address_building %>
   </div>
 
   <div class="form-gruop">
     <strong><%= t('pharmacy.registrations.show.normal_telephone_number') %></strong>
-    <%= current_pharmacy.normal_telephone_number %>
+    <%= @pharmacy.normal_telephone_number %>
   </div>
 
   <div class="form-gruop">
     <strong><%= t('pharmacy.registrations.show.abnormal_telephone_number') %></strong>
-    <%= current_pharmacy.abnormal_telephone_number %>
+    <%= @pharmacy.abnormal_telephone_number %>
   </div>
+
+  <div class="form-gruop">
+    <strong>開局時間:</strong></br>
+    <% @activities.each do |a| %>
+      <%= a.business %>
+      <% if a.open.present? %>
+        <%= a.open.hour %>:<%= a.open.min %>〜
+      <% end %>
+      <% if a.close.present? %>
+        <%= a.close.hour %>:<%= a.close.min %>
+      <% end %></br>
+    <% end %>
+  </div>
+
   <div class="form-gruop">
     <strong><%= t('user.registrations.show.remarks') %></strong>
-    <%= current_pharmacy.remarks %>
+    <%= @pharmacy.remarks %>
   </div>
 
   <div class="form-gruop">
     <strong><%= t('user.registrations.show.opinion') %></strong>
-    <%= current_pharmacy.opinion %>
+    <%= @pharmacy.opinion %>
   </div>
+
 
   <hr class="devise-link my-5">
   <div class="form-group">

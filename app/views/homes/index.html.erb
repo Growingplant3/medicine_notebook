@@ -41,7 +41,7 @@
       <h1><%= t('.health_record') %></h1>
       <p><%= t('.health_record_explanation') %></p>
       <% if user_signed_in? %>
-        <a class ="btn btn-primary btn-lg" href="#" role="button"><%= t('.let_us_go') %></a>
+        <a class ="btn btn-primary btn-lg" href="/condition" role="button"><%= t('.let_us_go') %></a>
       <% else %>
         <a class ="btn btn-primary btn-lg disabled" href="#" role="button"><%= t('.let_us_go') %></a>
       <% end %>
