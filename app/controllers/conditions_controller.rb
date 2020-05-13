@@ -1,10 +1,9 @@
 class ConditionsController < ApplicationController
-  def condition
+  def index
     @conditions = current_user.conditions
   end
 
   def edit
-    @condition = Condition.new
   end
 
   def create

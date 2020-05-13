@@ -5,7 +5,8 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
 
   def show
-    @activities = current_pharmacy.activities
+    @pharmacy = Pharmacy.find(params[:id])
+    @activities = @pharmacy.activities
   end
 
   def search
