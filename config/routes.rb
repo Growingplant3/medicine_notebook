@@ -17,10 +17,10 @@ Rails.application.routes.draw do
     delete 'users/:id' => 'users/registrations#destroy'
   end
   get '/pharmacies/show/:id', to: 'pharmacies/registrations#show'
-  get '/opinion', to: 'homes#opinion'
-  get '/history', to: 'homes#histroy'
-  get '/condition', to: 'conditions#index'
-  get '/condition/edit', to: 'conditions#edit'
-  post '/condition', to: 'conditions#create'
+  get '/opinions', to: 'homes#opinion'
+  get '/histories', to: 'homes#histroy'
+  get '/conditions', to: 'conditions#index'
+  get '/conditions/edit', to: 'conditions#edit'
+  post '/conditions', to: 'conditions#create'
   root 'homes#index'
 end
