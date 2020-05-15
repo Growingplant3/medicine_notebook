@@ -8,6 +8,8 @@
 
 //= require jquery.jpostal
 //= require jquery_nested_form
+//= require chartkick
+//= require Chart.bundle
 $(function(){
   $('input[name="user[postcode]"]').jpostal({
       postcode : [
