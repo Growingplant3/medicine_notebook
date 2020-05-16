@@ -1,22 +1,14 @@
 <div class="container-login">
   <h2>日々の変動</h2>
-  <p>ここにグラフを挿入</p>
-  <p>id/日にち/上/下/心拍/血糖/コメント</p>
-
-  <%= line_chart @conditions.map { |condition|
-    {name: "グラフ名", data: condition}
-  },min:0,max:400,xmin:0,xmax:3,xtitle:"日付",ytitle:"値" %>
+  <%= line_chart @chart_map.map { |key, value|
+    {name: key, data: value}
+  },min:0, max:300, xmin: "#{Date.today-7.day}", xmax: "#{Date.today}", xtitle:"日付", ytitle:"測定値" %>
 
   <tbody>
     <% @conditions.each do |condition| %>
       <tr>
-        <td><%= condition.id %></td>
-        <td><%#= condition.updated_at %></td>
-        <td><%= condition.systolic_blood_pressure%></td>
-        <td><%= condition.diastolic_blood_pressure %></td>
-        <td><%= condition.pulse %></td>
-        <td><%= condition.blood_sugar %></td>
-        <td><%#= condition.attached_comment %></td></br>
+        <td><%= condition.updated_at %></td>
+        <td><%= condition.attached_comment %></td></br>
       </tr>
     <% end %>
   </tbody>
