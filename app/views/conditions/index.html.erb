@@ -1,8 +1,8 @@
 <div class="container-login">
-  <h2>日々の変動</h2>
+  <h2><%= t('activerecord.attributes.condition.index_title') %></h2>
   <%= line_chart @chart_map.map { |key, value|
-    {name: key, data: value}
-  },min:0, max:300, xmin: "#{Date.today-7.day}", xmax: "#{Date.today}", xtitle:"日付", ytitle:"測定値" %>
+    {name: key, data: value}},
+    min:0, max:300, xmin: "#{Date.today-7.day}", xmax: "#{Date.today}", xtitle:t('activerecord.attributes.condition.date'), ytitle:t('activerecord.attributes.condition.parameter') %>
 
   <tbody>
     <% @conditions.each do |condition| %>
@@ -15,7 +15,7 @@
 
   <hr class="devise-link my-5">
   <div class="form-group">
-    <%= link_to "入力へ移動", conditions_edit_path, class: 'btn btn-success btn-block mb-4' %>
+    <%= link_to t('activerecord.attributes.condition.input_condition'), conditions_edit_path, class: 'btn btn-success btn-block mb-4' %>
     <%= link_to t('activerecord.attributes.pharmacy.top_page'), root_path, class: 'btn btn-info btn-block mb-4' %>
   </div>
 </div>

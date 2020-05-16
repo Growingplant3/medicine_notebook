@@ -1,11 +1,11 @@
 <div class="container-login">
-  <h2>体調記録</h2>
+  <h2><%= t('activerecord.attributes.condition.edit_title') %></h2>
 
   <div class="form-group">
     <%= form_with model:@condition, url: {controller: 'conditions', action: 'create' } do |f| %>
-      <%= f.label :収縮期血圧 %></br>
-      <span>0</span><span class="float-right" id="systolic_blood_pressure_value">300</span>
-      <%= f.range_field :systolic_blood_pressure, in: 0..300, class:"custom-range" , value: 0, id: "systolic_blood_pressure_range" %>
+      <%= f.label :"t('activerecord.attributes.condition.systolic_blood_pressure')" %></br>
+      <span>0</span><span class="float-right" id="systolic_blood_pressure_value">250</span>
+      <%= f.range_field :systolic_blood_pressure, in: 0..250, class:"custom-range" , value: 0, id: "systolic_blood_pressure_range" %>
       
       <script>
         var sbp = document.getElementById('systolic_blood_pressure_range');

@@ -72,6 +72,16 @@ ja:
         name: 薬局名
         normal_telephone_number: 電話番号
         email: メールアドレス
+      condition:
+        index_title: 日々の体調記録
+        edit_title: 体調入力
+        date: 日付
+        parameter: 測定値
+        input_condition: 体調入力へ移動
+        systolic_blood_pressure: 収縮期血圧
+        diastolic_blood_pressure: 拡張期血圧
+        pulse: 脈拍
+        blood_sugar: 血糖
     models:
       user: ユーザ
   user:
