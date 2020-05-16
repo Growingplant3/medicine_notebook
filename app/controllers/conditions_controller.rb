@@ -18,11 +18,9 @@ class ConditionsController < ApplicationController
     @condition.user_id = current_user.id
     @condition.record_time = Time.now
     if @condition.save
-      redirect_to controller: :conditions, action: :index
-      puts '正しく記録されました'
+      redirect_to action: :index
     else
-      redirect_to controller: 'conditions', action: 'index'
-      puts '正しく保存されませんでした。'
+      redirect_to action: :edit
     end
   end
 
