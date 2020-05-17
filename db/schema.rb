@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_060010) do
 
   create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id"
-    t.time "record_time"
+    t.date "record_time"
     t.integer "systolic_blood_pressure"
     t.integer "diastolic_blood_pressure"
     t.integer "pulse"

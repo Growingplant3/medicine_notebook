@@ -73,6 +73,7 @@ ja:
         normal_telephone_number: 電話番号
         email: メールアドレス
       condition:
+        record_nothing: 体調記録があれば、ここにグラフが表示されます
         index_title: 日々の体調記録
         edit_title: 体調入力
         date: 日付
@@ -172,7 +173,7 @@ ja:
         postcode: "郵便番号:"
         prefecture_code: "都道府県:"
         address_city: "市町村:"
-        address_street: "丁目番地:"
+        address_street: "詳細住所:"
         address_building: "建物名・部屋番号:"
         telephone_number: "電話番号:"
         age: "年齢:"

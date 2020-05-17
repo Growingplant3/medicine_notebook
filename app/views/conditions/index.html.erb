@@ -1,13 +1,17 @@
 <div class="container-login">
+  <% unless @conditions.present? %>
+    <h2><%= t('activerecord.attributes.condition.record_nothing') %></h2>
+  <% else %>
   <h2><%= t('activerecord.attributes.condition.index_title') %></h2>
   <%= line_chart @chart_map.map { |key, value|
     {name: key, data: value}},
     min:0, max:300, xmin: "#{Date.today-7.day}", xmax: "#{Date.today}", xtitle:t('activerecord.attributes.condition.date'), ytitle:t('activerecord.attributes.condition.parameter') %>
+  <% end %>
 
   <tbody>
     <% @conditions.each do |condition| %>
       <tr>
-        <td><%= condition.updated_at %></td>
+        <td><%= "#{condition.updated_at.month}/#{condition.updated_at.day}" %></td>
         <td><%= condition.attached_comment %></td></br>
       </tr>
     <% end %>
