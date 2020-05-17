@@ -32,3 +32,9 @@ ja:
         abnormal_telephone_number: "夜間休日対応電話番号"
         remarks: "備考欄"
         opinion: "ご意見欄"
+      condition:
+        systolic_blood_pressure: "収縮期血圧"
+        diastolic_blood_pressure: "拡張期血圧"
+        pulse: "脈拍"
+        blood_sugar: "血糖"
+        attached_comment: "一言コメント"

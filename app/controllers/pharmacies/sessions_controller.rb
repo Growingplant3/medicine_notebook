@@ -29,7 +29,7 @@ class Pharmacies::SessionsController < Devise::SessionsController
   # end
 
   def after_sign_in_path_for(resource)
-    pharmacies_show_path
+    pharmacies_registration_path
   end 
 
   def after_sign_out_path_for(resource)
