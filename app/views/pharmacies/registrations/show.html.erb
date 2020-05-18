@@ -42,15 +42,16 @@
   </div>
 
   <div class="form-gruop">
-    <strong>開局時間:</strong></br>
-    <% @activities.each do |a| %>
-      <%= a.business %>
-      <% if a.open.present? %>
-        <%= a.open.hour %>:<%= a.open.min %>〜
+    <strong><%= t('pharmacy.registrations.show.reception_time') %></strong></br>
+    <% @activities.each do |activity| %>
+      <%= activity.week_day_i18n %>
+      <% if activity.business == "open" %>
+        <% if activity.open.present? || activity.close.present? %>
+          <%= activity.open.strftime("%H:%M") %>〜<%= activity.close.strftime("%H:%M") %>
+        <% end %></br>
+      <% else %>
+        <%= activity.business_i18n %>
       <% end %>
-      <% if a.close.present? %>
-        <%= a.close.hour %>:<%= a.close.min %>
-      <% end %></br>
     <% end %>
   </div>
 

@@ -13,7 +13,6 @@ gem 'enum_help'
 
 # 管理者機能
 gem 'rails_admin'
-gem 'cancancan'
 
 # 住所関連
 gem 'uglifier'
@@ -37,7 +36,6 @@ gem 'ransack'
 # 1対多
 gem 'nested_form'
 gem "chartkick"
-gem 'groupdate'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'

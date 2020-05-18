@@ -284,6 +284,9 @@ ja:
         address_building: "詳細住所:"
         normal_telephone_number: "電話番号:"
         abnormal_telephone_number: "夜間休日対応電話番号:"
+        reception_time: "受付時間:"
+        true: "お休み"
+        false: "開局"
         update: 編集する
         destroy: 削除する
         sign_out: ログアウト

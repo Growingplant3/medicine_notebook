@@ -11,3 +11,16 @@ ja:
         type_b: "B型"
         type_o: "O型"
         type_ab: "AB型"
+    activity:
+      business:
+        open: "開局"
+        close: "お休み"
+      week_day:
+        monday: "月曜日"
+        tuesday: "火曜日"
+        wednesday: "水曜日"
+        thursday: "木曜日"
+        friday: "金曜日"
+        saturday: "土曜日"
+        sunday: "日曜日"
+
