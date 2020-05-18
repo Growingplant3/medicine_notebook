@@ -14,7 +14,7 @@ Pharmacy.find(1).activities.create(week_day: "3",business: "0",open: "09:00",clo
 Pharmacy.find(1).activities.create(week_day: "4",business: "0",open: "09:00",close: "18:00")
 Pharmacy.find(1).activities.create(week_day: "5",business: "0",open: "09:00",close: "14:00")
 Pharmacy.find(1).activities.create(week_day: "6",business: "1",open: "",close: "")
-Pharmacy.create(name: "カーネーション薬局",postcode: "2608667",prefecture_code: "千葉県",address_city: "千葉市中央区市場町",address_street: "1-1",address_building: "",normal_telephone_number: "0432232110",abnormal_telephone_number: "01011113333",remarks: "GW中は◯月×日が休日当番となっており、開局時間は09:00〜18:00です。",opinion: "◯◯機能をデザインがイマイチ、改善して欲しい",email: "carnation@gmail.com",password: "111111")
+Pharmacy.create(name: "カーネーション薬局",postcode: "2608667",prefecture_code: "千葉県",address_city: "千葉市中央区市場町",address_street: "1-1",address_building: "",normal_telephone_number: "0432232110",abnormal_telephone_number: "01011113333",remarks: "GW中は◯月×日が休日当番となっており、開局時間は09:00〜18:00です。",opinion: "◯◯機能のデザインがイマイチ、改善して欲しい",email: "carnation@gmail.com",password: "111111")
 Pharmacy.find(2).activities.create(week_day: "0",business: "0",open: "10:00",close: "19:00")
 Pharmacy.find(2).activities.create(week_day: "1",business: "0",open: "10:00",close: "19:00")
 Pharmacy.find(2).activities.create(week_day: "2",business: "0",open: "10:00",close: "19:00")
