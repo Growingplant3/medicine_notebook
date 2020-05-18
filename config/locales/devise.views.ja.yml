@@ -254,10 +254,13 @@ ja:
       not_set: 未設定
   homes:
     opinion:
-      thanks_opinion: 頂いた皆様の貴重な御意見に感謝いたします。
+      thanks_opinion: 皆様から頂いた貴重なご意見に感謝いたします。
+      all_users: ユーザーの皆様
+      all_pharmacies: 薬局の皆様
       age: 年齢
       sex: 性別
       opinion: ご意見
+      address_city: 都道府県
     index:
       search_medicine_notebook: お薬手帳記録検索
       search_medicine_notebook_explanation: 過去の処方箋情報が調べられます
