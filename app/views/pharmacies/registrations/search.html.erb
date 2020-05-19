@@ -29,7 +29,7 @@
     <tbody>
       <% @pharmacies.each do |pharmacy| %>
         <tr>
-          <td><%= link_to pharmacy.name, pharmacies_show_path(@pharmacy) %></td>
+          <td><%= link_to pharmacy.name, pharmacies_detail_path(pharmacy.id) %></td>
           <td><%= pharmacy.normal_telephone_number %></td>
           <td><%= pharmacy.email %></td>
         </tr>

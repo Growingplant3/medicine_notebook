@@ -1,7 +1,8 @@
 <div class="container-login">
   <h2><%= t('.thanks_opinion') %></h2>
-  <table>
-    <thead>
+  <h3><%= t('.all_users') %></h3>
+  <table class="table">
+    <thead class="thead-dark">
       <tr>
         <th><%= t('.age') %></th>
         <th><%= t('.sex') %></th>
@@ -9,7 +10,6 @@
         <th colspan="3"></th>
       </tr>
     </thead>
-
     <tbody>
       <% @users.each do |user| %>
         <tr>
@@ -20,6 +20,26 @@
       <% end %>
     </tbody>
   </table>
+
+  <h3><%= t('.all_pharmacies') %></h3>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th><%= t('.address_city') %></th>
+        <th><%= t('.opinion') %></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pharmacies.each do |pharmacy| %>
+        <tr>
+          <td><%= pharmacy.address_city %></td>
+          <td><%= pharmacy.opinion %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
   <hr class="devise-link my-5">
   <div class="form-group">
     <%= link_to t('activerecord.attributes.user.top_page'), root_path, class: 'btn btn-info btn-block mb-4' %>

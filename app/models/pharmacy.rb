@@ -27,6 +27,9 @@ class Pharmacy < ApplicationRecord
     result
   end
 
+  has_many :medicine_notebook_records
+  has_many :users, :through => :medicine_notebook_records
+  accepts_nested_attributes_for :medicine_notebook_records, allow_destroy: true
   has_many :activities, dependent: :delete_all
   accepts_nested_attributes_for :activities, allow_destroy: true
 end

@@ -1,11 +1,11 @@
 <div class="container-login">
-  <h2>体調記録</h2>
+  <h2><%= t('activerecord.attributes.condition.edit_title') %></h2>
 
   <div class="form-group">
-    <%= form_with model:@condition, url: {controller: 'conditions', action: 'create' } do |f| %>
-      <%= f.label :収縮期血圧 %></br>
-      <span>0</span><span class="float-right" id="systolic_blood_pressure_value">300</span>
-      <%= f.range_field :systolic_blood_pressure, in: 0..300, class:"custom-range" , value: 0, id: "systolic_blood_pressure_range" %>
+    <%= form_with model: @condition,url: conditions_create_path do |f| %>
+      <%= f.label :systolic_blood_pressure %></br>
+      <span>0</span><span class="float-right" id="systolic_blood_pressure_value">250</span>
+      <%= f.range_field :systolic_blood_pressure, in: 0..250, class:"custom-range" , value: 0, id: "systolic_blood_pressure_range" %>
       
       <script>
         var sbp = document.getElementById('systolic_blood_pressure_range');
@@ -18,7 +18,7 @@
         sbp.addEventListener('input', rangeValue(sbp, sbpv));
       </script>
   
-      <%= f.label :拡張期血圧 %></br>
+      <%= f.label :diastolic_blood_pressure %></br>
       <span>0</span><span class="float-right" id="diastolic_blood_pressure_value">150</span>
       <%= f.range_field :diastolic_blood_pressure, in: 0..150, class:"custom-range" , value: 0, id: "diastolic_blood_pressure_range" %>
       
@@ -33,7 +33,7 @@
         dbp.addEventListener('input', rangeValue(dbp, dbpv));
       </script>
 
-      <%= f.label :脈拍 %></br>
+      <%= f.label :pulse %></br>
       <span>0</span><span class="float-right" id="pulse_value">200</span>
       <%= f.range_field :pulse, in: 0..200, class:"custom-range" , value: 0, id: "pulse_range" %>
       
@@ -48,9 +48,9 @@
         heart_rate.addEventListener('input', rangeValue(heart_rate, heart_rate_value));
       </script>
 
-      <%= f.label :血糖 %></br>
-      <span>0</span><span class="float-right" id="blood_sugar_value">600</span>
-      <%= f.range_field :blood_sugar, in: 0..600, class:"custom-range" , value: 0, id: "blood_sugar_range" %>
+      <%= f.label :blood_sugar %></br>
+      <span>0</span><span class="float-right" id="blood_sugar_value">250</span>
+      <%= f.range_field :blood_sugar, in: 0..250, class:"custom-range" , value: 0, id: "blood_sugar_range" %>
       
       <script>
         var blood_sugar = document.getElementById('blood_sugar_range');
@@ -63,14 +63,14 @@
         blood_sugar.addEventListener('input', rangeValue(blood_sugar, blood_sugar_value));
       </script>
 
-      <%= f.label :一言コメント %>
+      <%= f.label :attached_comment %>
       <%= f.text_area :attached_comment, class:"form-control"%></br>
 
-      <%= f.submit "更新する", class: 'btn btn-primary btn-block' %>
+      <%= f.submit t('activerecord.attributes.condition.edit'), class: 'btn btn-primary btn-block' %>
     <% end %>
 
     <hr class="devise-link my-5">
-    <%= link_to "記録を確認する", conditions_path, class: 'btn btn-success btn-block mb-4' %>
+    <%= link_to t('activerecord.attributes.condition.check'), conditions_index_path, class: 'btn btn-success btn-block mb-4' %>
     <%= link_to t('activerecord.attributes.pharmacy.top_page'), root_path, class: 'btn btn-info btn-block mb-4' %>
   </div>
 </div>

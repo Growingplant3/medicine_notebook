@@ -1,17 +1,17 @@
 <div class="container-login">
-  <h2>日々の変動</h2>
-  <p>ここにグラフを挿入</p>
-  <p>id/日にち/上/下/心拍/血糖/コメント</p>
+  <% unless @conditions.present? %>
+    <h2><%= t('activerecord.attributes.condition.record_nothing') %></h2>
+  <% else %>
+  <h2><%= t('activerecord.attributes.condition.index_title') %></h2>
+  <%= line_chart @chart_map.map { |key, value|
+    {name: key, data: value}},
+    min:0, max:300, xmin: "#{Date.today-7.day}", xmax: "#{Date.today}", xtitle:t('activerecord.attributes.condition.date'), ytitle:t('activerecord.attributes.condition.parameter') %>
+  <% end %>
 
   <tbody>
     <% @conditions.each do |condition| %>
       <tr>
-        <td><%= condition.id %></td>
-        <td><%= condition.record_time %></td>
-        <td><%= condition.systolic_blood_pressure%></td>
-        <td><%= condition.diastolic_blood_pressure %></td>
-        <td><%= condition.pulse %></td>
-        <td><%= condition.blood_sugar %></td>
+        <td><%= "#{condition.updated_at.month}/#{condition.updated_at.day}" %></td>
         <td><%= condition.attached_comment %></td></br>
       </tr>
     <% end %>
@@ -19,7 +19,7 @@
 
   <hr class="devise-link my-5">
   <div class="form-group">
-    <%= link_to "入力へ移動", conditions_edit_path, class: 'btn btn-success btn-block mb-4' %>
+    <%= link_to t('activerecord.attributes.condition.input_condition'), conditions_edit_path, class: 'btn btn-success btn-block mb-4' %>
     <%= link_to t('activerecord.attributes.pharmacy.top_page'), root_path, class: 'btn btn-info btn-block mb-4' %>
   </div>
 </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_060010) do
+ActiveRecord::Schema.define(version: 2020_05_19_083231) do
 
   create_table "activities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "pharmacy_id"
@@ -24,11 +24,40 @@ ActiveRecord::Schema.define(version: 2020_05_11_060010) do
 
   create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id"
-    t.time "record_time"
+    t.date "record_time"
     t.integer "systolic_blood_pressure"
     t.integer "diastolic_blood_pressure"
     t.integer "pulse"
     t.integer "blood_sugar"
+    t.text "attached_comment"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "drug_informations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "medicine_notebook_record_id"
+    t.string "drug_name"
+    t.string "medical_effect"
+    t.float "daily_dose"
+    t.integer "number_of_doses"
+    t.integer "when_to_take"
+    t.integer "prescription_days"
+    t.boolean "crush"
+    t.boolean "shading"
+    t.boolean "one_dose_package"
+    t.integer "tablet_color"
+    t.string "remaining_medicine"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "medicine_notebook_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "pharmacy_id"
+    t.time "date_of_issue"
+    t.time "date_of_dispensing"
+    t.string "medical_institution"
+    t.string "doctor"
     t.text "attached_comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

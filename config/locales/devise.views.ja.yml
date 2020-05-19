@@ -72,6 +72,19 @@ ja:
         name: 薬局名
         normal_telephone_number: 電話番号
         email: メールアドレス
+      condition:
+        record_nothing: 体調記録があれば、ここにグラフが表示されます
+        index_title: 日々の体調記録
+        edit_title: 体調入力
+        date: 日付
+        parameter: 測定値
+        input_condition: 体調入力へ移動
+        edit: 記録を入力する
+        check: 記録を確認する
+        systolic_blood_pressure: 収縮期血圧
+        diastolic_blood_pressure: 拡張期血圧
+        pulse: 脈拍
+        blood_sugar: 血糖
     models:
       user: ユーザ
   user:
@@ -160,7 +173,7 @@ ja:
         postcode: "郵便番号:"
         prefecture_code: "都道府県:"
         address_city: "市町村:"
-        address_street: "丁目番地:"
+        address_street: "詳細住所:"
         address_building: "建物名・部屋番号:"
         telephone_number: "電話番号:"
         age: "年齢:"
@@ -241,10 +254,13 @@ ja:
       not_set: 未設定
   homes:
     opinion:
-      thanks_opinion: 頂いた皆様の貴重な御意見に感謝いたします。
+      thanks_opinion: 皆様から頂いた貴重なご意見に感謝いたします。
+      all_users: ユーザーの皆様
+      all_pharmacies: 薬局の皆様
       age: 年齢
       sex: 性別
       opinion: ご意見
+      address_city: 都道府県
     index:
       search_medicine_notebook: お薬手帳記録検索
       search_medicine_notebook_explanation: 過去の処方箋情報が調べられます
@@ -268,6 +284,9 @@ ja:
         address_building: "詳細住所:"
         normal_telephone_number: "電話番号:"
         abnormal_telephone_number: "夜間休日対応電話番号:"
+        reception_time: "受付時間:"
+        true: "お休み"
+        false: "開局"
         update: 編集する
         destroy: 削除する
         sign_out: ログアウト

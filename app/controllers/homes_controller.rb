@@ -4,6 +4,7 @@ class HomesController < ApplicationController
 
   def opinion
     @users = User.all
+    @pharmacies = Pharmacy.all
   end
 
   def history
