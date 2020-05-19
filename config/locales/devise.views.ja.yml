@@ -65,7 +65,7 @@ ja:
         update: 更新する
         search_function: 調剤薬局検索
         enter_pharmacy_name: 検索したい薬局の名前を入力
-        enter_pharmacy_postcode: 検索したい薬局の電話番号を入力
+        enter_pharmacy_telephone_number: 検索したい薬局の電話番号を入力
         enter_pharmacy_email: 検索したい薬局のメールアドレスを入力
         search: 検索
         all_pharmacies: 薬局一覧
@@ -85,6 +85,28 @@ ja:
         diastolic_blood_pressure: 拡張期血圧
         pulse: 脈拍
         blood_sugar: 血糖
+      medicine_notebook_record:
+        search_function: 患者検索
+        enter_user_name: 検索したい患者の名前を入力
+        enter_user_age: 検索したい患者の年齢を入力
+        choose_user_sex: 検索したい患者の性別を選択
+        no_choose: 指定なし
+        men: 男性
+        women: 女性
+        choose_user_blood_type: 検索したい患者の血液型を選択
+        blood_a: A型
+        blood_b: B型
+        blood_o: O型
+        blood_ab: AB型
+        enter_user_telephone_number: 検索したい患者の電話番号を入力
+        enter_user_email: 検索したい患者のメールアドレスを入力
+        all_user: 患者一覧
+        user_name: 患者名
+        user_age: 年齢
+        user_sex: 性別
+        user_blood_type: 血液型
+        user_telephone_number: 電話番号
+        user_email: メールアドレス
     models:
       user: ユーザ
   user:
