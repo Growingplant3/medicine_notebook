@@ -22,7 +22,7 @@ Pharmacy.find(2).activities.create(week_day: "thursday",business: "close",open: 
 Pharmacy.find(2).activities.create(week_day: "friday",business: "open",open: "10:00",close: "19:00")
 Pharmacy.find(2).activities.create(week_day: "saturday",business: "open",open: "10:00",close: "19:00")
 Pharmacy.find(2).activities.create(week_day: "sunday",business: "open",open: "10:00",close: "14:00")
-Pharmacy.create(name: "バラ薬局",postcode: "3309301",prefecture_code: "埼玉県",address_city: "さいたま市浦和区高砂3丁目",address_street: "15-1",address_building: "",normal_telephone_number: "0488242111",abnormal_telephone_number: "01011114444",remarks: "駐車場は普通車乗用車3台分のスペースを設けております。",opinion: "◯◯機能を使って××を使用としたらエラーが発生、改善して欲しい",email: "rose@gmail.com",password: "111111")
+Pharmacy.create(name: "バラ薬局",postcode: "3309301",prefecture_code: "埼玉県",address_city: "さいたま市浦和区高砂3丁目",address_street: "15-1",address_building: "",normal_telephone_number: "0488242111",abnormal_telephone_number: "01011114444",remarks: "駐車場は普通車乗用車3台分のスペースを設けております。",opinion: "◯◯機能を使って××をしようとしたらエラーが発生、改善して欲しい",email: "rose@gmail.com",password: "111111")
 Pharmacy.find(3).activities.create(week_day: "monday",business: "open",open: "08:30",close: "19:00")
 Pharmacy.find(3).activities.create(week_day: "tuesday",business: "open",open: "08:30",close: "19:00")
 Pharmacy.find(3).activities.create(week_day: "wednesday",business: "open",open: "08:30",close: "19:00")

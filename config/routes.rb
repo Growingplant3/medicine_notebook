@@ -18,8 +18,9 @@ Rails.application.routes.draw do
   end
   get '/opinions', to: 'homes#opinion'
   get '/histories', to: 'homes#histroy'
-  get '/conditions/index', to: 'conditions#index'
+  get '/conditions', to: 'conditions#index'
   get '/conditions/edit', to: 'conditions#edit'
   post '/conditions/create', to: 'conditions#create'
+  get '/references', to: 'medicine_notebook_records#reference'
   root 'homes#index'
 end
