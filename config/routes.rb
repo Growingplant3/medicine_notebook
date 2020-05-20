@@ -22,6 +22,6 @@ Rails.application.routes.draw do
   get '/conditions', to: 'conditions#index'
   get '/conditions/edit', to: 'conditions#edit'
   post '/conditions/create', to: 'conditions#create'
-  get '/references', to: 'medicine_notebook_records#reference'
+  get '/medicine_notebook/search', to: 'medicine_notebook_records#search'
   root 'homes#index'
 end

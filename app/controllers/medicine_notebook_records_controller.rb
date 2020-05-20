@@ -3,7 +3,7 @@ class MedicineNotebookRecordsController < ApplicationController
   def new
   end
 
-  def reference
+  def search
     @q = User.ransack(params[:q])
     @Users = @q.result(distinct: true)
   end

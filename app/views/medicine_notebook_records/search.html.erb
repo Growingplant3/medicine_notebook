@@ -1,7 +1,7 @@
 <div class="container-fulid">
   <div class="mb-3">
     <h2><%= t('activerecord.attributes.medicine_notebook_record.search_function') %></h2>
-    <%= search_form_for(@q, url:references_path) do |f| %>
+    <%= search_form_for(@q, url:medicine_notebook_search_path) do |f| %>
       <%= f.label :name, t('activerecord.attributes.medicine_notebook_record.enter_user_name') %>
       <%= f.search_field :name_cont %></br>
 
