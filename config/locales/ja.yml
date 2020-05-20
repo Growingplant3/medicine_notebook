@@ -25,10 +25,13 @@ ja:
         sunday: "日曜日"
     drugindormation:
       crush:
+        as_it_is: "そのまま"
         smash: "粉砕"
       shading:
-        shade: "遮光"
+        light: "そのまま"
+        dark: "遮光"
       one_dose_package:
+        tablet: "そのまま"
         pouch: "一包化"
       tablet_color:
         red: "赤"

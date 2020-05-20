@@ -66,15 +66,11 @@ class Pharmacies::RegistrationsController < Devise::RegistrationsController
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    @pharmacy = current_pharmacy
-    @activities = @pharmacy.activities
-    pharmacies_detail_path
+    pharmacies_detail_path(@pharmacy.id)
   end
 
   def after_update_path_for(resource)
-    @pharmacy = current_pharmacy
-    @activities = @pharmacy.activities
-    pharmacies_detail_path
+    pharmacies_detail_path(@pharmacy.id)
   end
   
   # The path used after sign up for inactive accounts.

@@ -30,7 +30,7 @@ ja:
         address_building: "建物名など"
         normal_telephone_number: "電話番号"
         abnormal_telephone_number: "夜間休日対応電話番号"
-        week_day: "受付時間(休診ならチェックボックスにチェックを入れる)"
+        week_day: "受付時間(お休みならチェックボックスにチェックを入れる)"
         remarks: "備考欄"
         opinion: "ご意見欄"
       condition:

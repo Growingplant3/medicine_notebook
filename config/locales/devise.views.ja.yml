@@ -85,6 +85,7 @@ ja:
         diastolic_blood_pressure: 拡張期血圧
         pulse: 脈拍
         blood_sugar: 血糖
+        attached_comment: 一言コメント
       medicine_notebook_record:
         search_function: 患者検索
         enter_user_name: 検索したい患者の名前を入力
