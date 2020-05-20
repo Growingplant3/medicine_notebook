@@ -1,7 +1,7 @@
 <header class="hf-both sticky-top">
   <nav class="navbar navbar-expand navbar-light">
     <div class="navbar-nav mr-auto">
-      <%= link_to t('.application_title'), root_path, class: 'navbar-brand' %>
+      <%= link_to t('.application_title'), developer_path, class: 'navbar-brand' %>
     </div>
 
     <% if user_signed_in? || pharmacy_signed_in? %>
@@ -71,9 +71,6 @@
               </li>
               <li class="dropdown-item">
                 <%= link_to t('.history'), histories_path, class: 'nav-link' %>
-              </li>
-              <li class="dropdown-item">
-                <%= link_to t('.developer'), root_path, class: 'nav-link' %>
               </li>
             </ul>
         </div>  

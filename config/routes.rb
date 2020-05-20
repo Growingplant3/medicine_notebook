@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   end
   get '/opinions', to: 'homes#opinion'
   get '/histories', to: 'homes#histroy'
+  get '/developer', to: 'homes#develop'
   get '/conditions', to: 'conditions#index'
   get '/conditions/edit', to: 'conditions#edit'
   post '/conditions/create', to: 'conditions#create'

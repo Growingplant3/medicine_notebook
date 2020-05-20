@@ -9,4 +9,7 @@ class HomesController < ApplicationController
 
   def history
   end
+
+  def develop
+  end
 end
