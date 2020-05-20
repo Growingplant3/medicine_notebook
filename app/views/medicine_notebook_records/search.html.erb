@@ -1,0 +1,65 @@
+<div class="container-fulid">
+  <div class="mb-3">
+    <h2><%= t('activerecord.attributes.medicine_notebook_record.search_function') %></h2>
+    <%= search_form_for(@q, url:medicine_notebook_search_path) do |f| %>
+      <%= f.label :name, t('activerecord.attributes.medicine_notebook_record.enter_user_name') %>
+      <%= f.search_field :name_cont %></br>
+
+      <%= f.label :age, t('activerecord.attributes.medicine_notebook_record.enter_user_age') %>
+      <%= f.search_field :age_cont %></br>
+
+      <%= f.label :sex, t('activerecord.attributes.medicine_notebook_record.choose_user_sex') %>
+      <%= f.radio_button :sex_eq, '', {:checked => true} %><%= t('activerecord.attributes.medicine_notebook_record.no_choose') %>
+      <%= f.radio_button :sex_eq, 1 %><%= t('activerecord.attributes.medicine_notebook_record.men') %>
+      <%= f.radio_button :sex_eq, 2 %><%= t('activerecord.attributes.medicine_notebook_record.women') %></br>
+
+      <%#= f.label :blood_type, t('activerecord.attributes.medicine_notebook_record.choose_user_blood_type') %>
+      <%#= f.radio_button :blood_type_eq, '', {:checked => true} %><%= t('activerecord.attributes.medicine_notebook_record.no_choose') %>
+      <%#= f.radio_button :blood_type_eq, 1 %><%= t('activerecord.attributes.medicine_notebook_record.blood_a') %>
+      <%#= f.radio_button :blood_type_eq, 2 %><%= t('activerecord.attributes.medicine_notebook_record.blood_b') %>
+      <%#= f.radio_button :blood_type_eq, 3 %><%= t('activerecord.attributes.medicine_notebook_record.blood_o') %>
+      <%#= f.radio_button :blood_type_eq, 4 %><%= t('activerecord.attributes.medicine_notebook_record.blood_ab') %></br>
+
+      <%= f.label :telephone_number, t('activerecord.attributes.medicine_notebook_record.enter_user_telephone_number') %>
+      <%= f.search_field :telephone_number_cont %></br>
+
+      <%= f.label :email, t('activerecord.attributes.medicine_notebook_record.enter_user_email') %>
+      <%= f.search_field :email_cont %></br>
+
+      <%= f.submit t('activerecord.attributes.pharmacy.search') %>
+    <% end %>
+  </div>
+
+  <h2><%= t('activerecord.attributes.medicine_notebook_record.all_user') %></h2>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th><%= t('activerecord.attributes.medicine_notebook_record.user_name') %></th>
+        <th><%= t('activerecord.attributes.medicine_notebook_record.user_age') %></th>
+        <th><%= t('activerecord.attributes.medicine_notebook_record.user_sex') %></th>
+        <th><%= t('activerecord.attributes.medicine_notebook_record.user_blood_type') %></th>
+        <th><%= t('activerecord.attributes.medicine_notebook_record.user_telephone_number') %></th>
+        <th><%= t('activerecord.attributes.medicine_notebook_record.user_email') %></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @Users.each do |user| %>
+        <tr>
+          <td><%= link_to user.name, root_path %></td>
+          <td><%= user.age %></td>
+          <td><%= user.sex_i18n %></td>
+          <td><%= user.blood_types_i18n %></td>
+          <td><%= user.telephone_number %></td>
+          <td><%= user.email %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  
+  <hr class="devise-link my-5">
+  <div class="form-group">
+    <%= link_to t('activerecord.attributes.pharmacy.top_page'), root_path, class: 'btn btn-info btn-block mb-4' %>
+  </div>
+</div>

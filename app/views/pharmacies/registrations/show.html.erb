@@ -46,12 +46,13 @@
     <% @activities.each do |activity| %>
       <%= activity.week_day_i18n %>
       <% if activity.business == "open" %>
-        <% if activity.open.present? || activity.close.present? %>
+        <% if activity.open.present? && activity.close.present? %>
           <%= activity.open.strftime("%H:%M") %>〜<%= activity.close.strftime("%H:%M") %>
-        <% end %></br>
+        <% end %>
       <% else %>
         <%= activity.business_i18n %>
       <% end %>
+      </br>
     <% end %>
   </div>
 

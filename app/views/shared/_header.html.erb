@@ -1,7 +1,7 @@
 <header class="hf-both sticky-top">
   <nav class="navbar navbar-expand navbar-light">
     <div class="navbar-nav mr-auto">
-      <%= link_to t('.application_title'), root_path, class: 'navbar-brand' %>
+      <%= link_to t('.application_title'), developer_path, class: 'navbar-brand' %>
     </div>
 
     <% if user_signed_in? || pharmacy_signed_in? %>
@@ -12,7 +12,7 @@
           </button>
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item">
-                <%= link_to t('.search_medicine_notebook'), root_path, class: 'nav-link' %>
+                <%= link_to t('.search_medicine_notebook'), medicine_notebook_search_path, class: 'nav-link' %>
               </li>
               <li class="dropdown-item">
                 <%= link_to t('.search_pharmacy'), pharmacies_search_path, class: 'nav-link' %>
@@ -22,7 +22,7 @@
                   <%= link_to t('.family_configure'), root_path, class: 'nav-link' %>
                 </li>
                 <li class="dropdown-item">
-                  <%= link_to t('.health_record'), conditions_index_path, class: 'nav-link' %>
+                  <%= link_to t('.health_record'), conditions_path, class: 'nav-link' %>
                 </li>
                 <li class="dropdown-item">
                   <%= link_to t('.user_sign_out'), destroy_user_session_path, method: :delete, class: 'nav-link' %>
