@@ -1,11 +1,11 @@
 class MedicineNotebookRecordsController < ApplicationController
-  before_action :authenticate_pharmacy!, only: [:reference,:select]
+  before_action :authenticate_pharmacy!, only: [:search,:select]
   def new
   end
 
   def search
     @q = User.ransack(params[:q])
-    @Users = @q.result(distinct: true)
+    @users = @q.result(distinct: true)
   end
 
   def select

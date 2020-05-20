@@ -13,12 +13,12 @@
       <%= f.radio_button :sex_eq, 1 %><%= t('activerecord.attributes.medicine_notebook_record.men') %>
       <%= f.radio_button :sex_eq, 2 %><%= t('activerecord.attributes.medicine_notebook_record.women') %></br>
 
-      <%#= f.label :blood_type, t('activerecord.attributes.medicine_notebook_record.choose_user_blood_type') %>
-      <%#= f.radio_button :blood_type_eq, '', {:checked => true} %><%= t('activerecord.attributes.medicine_notebook_record.no_choose') %>
-      <%#= f.radio_button :blood_type_eq, 1 %><%= t('activerecord.attributes.medicine_notebook_record.blood_a') %>
-      <%#= f.radio_button :blood_type_eq, 2 %><%= t('activerecord.attributes.medicine_notebook_record.blood_b') %>
-      <%#= f.radio_button :blood_type_eq, 3 %><%= t('activerecord.attributes.medicine_notebook_record.blood_o') %>
-      <%#= f.radio_button :blood_type_eq, 4 %><%= t('activerecord.attributes.medicine_notebook_record.blood_ab') %></br>
+      <%= f.label :blood_types, t('activerecord.attributes.medicine_notebook_record.choose_user_blood_type') %>
+      <%= f.radio_button :blood_types_eq, '', {:checked => true} %><%= t('activerecord.attributes.medicine_notebook_record.no_choose') %>
+      <%= f.radio_button :blood_types_eq, 1 %><%= t('activerecord.attributes.medicine_notebook_record.blood_a') %>
+      <%= f.radio_button :blood_types_eq, 2 %><%= t('activerecord.attributes.medicine_notebook_record.blood_b') %>
+      <%= f.radio_button :blood_types_eq, 3 %><%= t('activerecord.attributes.medicine_notebook_record.blood_o') %>
+      <%= f.radio_button :blood_types_eq, 4 %><%= t('activerecord.attributes.medicine_notebook_record.blood_ab') %></br>
 
       <%= f.label :telephone_number, t('activerecord.attributes.medicine_notebook_record.enter_user_telephone_number') %>
       <%= f.search_field :telephone_number_cont %></br>
@@ -45,7 +45,7 @@
     </thead>
 
     <tbody>
-      <% @Users.each do |user| %>
+      <% @users.each do |user| %>
         <tr>
           <td><%= link_to user.name, root_path %></td>
           <td><%= user.age %></td>
