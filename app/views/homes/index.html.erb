@@ -1,15 +1,15 @@
 <div class="container-login">
 
   <div class="jumbotron">
-      <h1><%= t('.search_medicine_notebook') %></h1>
-      <p><%= t('.search_medicine_notebook_explanation') %></p>
-      <% if user_signed_in? %>
-        <a class ="btn btn-primary btn-lg" href="#" role="button"><%= t('.let_us_go') %></a>
-      <% elsif pharmacy_signed_in? %>
-        <a class ="btn btn-primary btn-lg" href="#" role="button"><%= t('.let_us_go') %></a>
-      <% elsif %>
-        <a class ="btn btn-primary btn-lg disabled" href="#" role="button"><%= t('.let_us_go') %></a>
-      <% end %>
+    <h1><%= t('.search_medicine_notebook') %></h1>
+    <p><%= t('.search_medicine_notebook_explanation') %></p>
+    <% if user_signed_in? %>
+      <a class ="btn btn-primary btn-lg" href="medicine_notebook/new" role="button"><%= t('.let_us_go') %></a>
+    <% elsif pharmacy_signed_in? %>
+      <a class ="btn btn-primary btn-lg" href="medicine_notebook/search" role="button"><%= t('.let_us_go') %></a>
+    <% elsif %>
+      <a class ="btn btn-primary btn-lg disabled" href="#" role="button"><%= t('.let_us_go') %></a>
+    <% end %>
   </div>
 
   <div class="jumbotron">
@@ -18,11 +18,9 @@
     <% unless pharmacy_signed_in? %>
       <p><%= t('.inquire_pharmacy')%></p>
     <% end %>
-    <% if user_signed_in? %>
-      <a class ="btn btn-primary btn-lg" href="pharmacies/search/" role="button"><%= t('.let_us_go') %></a>
-    <% elsif pharmacy_signed_in? %>
-      <a class ="btn btn-primary btn-lg" href="#" role="button"><%= t('.let_us_go') %></a>
-    <% elsif %>
+    <% if user_signed_in? || pharmacy_signed_in? %>
+      <a class ="btn btn-primary btn-lg" href="pharmacies/search/" role="button"><%= t('.let_us_go') %></a> 
+    <% else %>
       <a class ="btn btn-primary btn-lg disabled" href="#" role="button"><%= t('.let_us_go') %></a>
     <% end %>
   </div>
@@ -42,7 +40,7 @@
       <h1><%= t('.health_record') %></h1>
       <p><%= t('.health_record_explanation') %></p>
       <% if user_signed_in? %>
-        <a class ="btn btn-primary btn-lg" href="/conditions/index" role="button"><%= t('.let_us_go') %></a>
+        <a class ="btn btn-primary btn-lg" href="conditions" role="button"><%= t('.let_us_go') %></a>
       <% else %>
         <a class ="btn btn-primary btn-lg disabled" href="#" role="button"><%= t('.let_us_go') %></a>
       <% end %>

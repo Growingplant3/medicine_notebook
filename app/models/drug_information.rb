@@ -1,5 +1,6 @@
 class DrugInformation < ApplicationRecord
-  enum when_to_take: {}
+  # w: wake_up, m: morning, a: afternoon, e: evening, n: night 
+  enum when_to_take: { :m => 0, :a => 1, :e => 2, :n => 3, :w => 4, :ma => 5, :me => 6, :mn => 7, :mae => 8 }
   enum crush: { :as_it_is => false, :smash => true }
   enum shading: { :light => false, :dark => true }
   enum one_dose_package: { :tablet => false, :pouch => true }

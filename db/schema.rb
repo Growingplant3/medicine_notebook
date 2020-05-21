@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2020_05_19_083231) do
     t.boolean "shading"
     t.boolean "one_dose_package"
     t.integer "tablet_color"
+    t.string "attention"
     t.string "remaining_medicine"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -101,6 +102,7 @@ ActiveRecord::Schema.define(version: 2020_05_19_083231) do
     t.string "address_street"
     t.string "address_building"
     t.string "telephone_number"
+    t.date "birthday"
     t.integer "age"
     t.integer "sex", default: 0, null: false
     t.integer "body_weight"

@@ -12,6 +12,7 @@ class CreateDrugInformations < ActiveRecord::Migration[6.0]
       t.boolean :shading
       t.boolean :one_dose_package
       t.integer :tablet_color
+      t.string :attention
       t.string :remaining_medicine
 
       t.timestamps
