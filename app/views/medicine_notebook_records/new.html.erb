@@ -1,1 +1,8 @@
-<a>aaaaaaaaaa</a>
+<div class="container-login">
+  <%= @user.name %>
+
+  <hr class="devise-link my-5">
+  <div class="form-group">
+    <%= link_to t('activerecord.attributes.user.top_page'), root_path, class: 'btn btn-info btn-block mb-4' %>
+  </div>
+</div>

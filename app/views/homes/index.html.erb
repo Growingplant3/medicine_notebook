@@ -4,7 +4,7 @@
     <h1><%= t('.search_medicine_notebook') %></h1>
     <p><%= t('.search_medicine_notebook_explanation') %></p>
     <% if user_signed_in? %>
-      <a class ="btn btn-primary btn-lg" href="medicine_notebook/new" role="button"><%= t('.let_us_go') %></a>
+      <a class ="btn btn-primary btn-lg" href="medicine_notebook/new/<%= current_user.id%>" role="button"><%= t('.let_us_go') %></a>
     <% elsif pharmacy_signed_in? %>
       <a class ="btn btn-primary btn-lg" href="medicine_notebook/search" role="button"><%= t('.let_us_go') %></a>
     <% elsif %>
