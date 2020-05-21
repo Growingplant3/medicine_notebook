@@ -24,6 +24,9 @@ ja:
         saturday: "土曜日"
         sunday: "日曜日"
     drugindormation:
+      medical_effect:
+        antihypertensive: "血圧を抑える薬です。"
+        lipid_abnormalities: "脂質異常を抑える薬です。"
       crush:
         as_it_is: "そのまま"
         smash: "粉砕"
@@ -38,3 +41,16 @@ ja:
         yellow: "黄"
         green: "緑"
         blue: "青"
+    howtotake:
+      when_to_take:
+        wake_up: "起床時"
+        before_morning_meal: "朝食前"
+        after_morning_meal: "朝食後"
+        between_morning_meal: "朝食間"
+        before_lunch: "昼食前"
+        after_lunch: "昼食後"
+        between_lunch: "昼食間"
+        before_dinner: "夕食前"
+        after_dinner: "夕食後"
+        between_dinner: "夕食間"
+        night: "就寝前"

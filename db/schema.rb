@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2020_05_19_083231) do
     t.time "date_of_issue"
     t.time "date_of_dispensing"
     t.string "medical_institution"
-    t.string "doctor"
+    t.string "doctor_name"
     t.text "attached_comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
