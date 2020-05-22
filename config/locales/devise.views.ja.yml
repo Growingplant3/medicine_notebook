@@ -109,6 +109,7 @@ ja:
         user_telephone_number: 電話番号
         user_email: メールアドレス
         new_title: お薬手帳記録作成
+        caution: 記録前に必ず確認してください
     models:
       user: ユーザ
   user:

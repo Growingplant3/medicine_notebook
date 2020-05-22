@@ -3,8 +3,18 @@ class MedicineNotebookRecordsController < ApplicationController
   def new
     @user = User.find(params[:id])
     if @user == current_user || pharmacy_signed_in?
+      puts params[:id]
+      puts @user == current_user
+      puts "-----"
+      puts pharmacy_signed_in?
+      puts "ニューパスへ"
       medicine_notebook_new_path
     else
+      puts params[:id]
+      puts @user == current_user
+      puts "-----"
+      puts pharmacy_signed_in?
+      puts "ルートパスへ"
       root_path
     end
   end
