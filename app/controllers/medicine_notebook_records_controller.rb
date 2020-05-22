@@ -15,7 +15,7 @@ class MedicineNotebookRecordsController < ApplicationController
       puts "-----"
       puts pharmacy_signed_in?
       puts "ルートパスへ"
-      root_path
+      redirect_to root_path
     end
   end
 
