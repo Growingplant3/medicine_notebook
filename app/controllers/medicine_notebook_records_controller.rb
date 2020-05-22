@@ -2,6 +2,11 @@ class MedicineNotebookRecordsController < ApplicationController
   before_action :authenticate_pharmacy!, only: [:search]
   def new
     @user = User.find(params[:id])
+    if @user == current_user || pharmacy_signed_in?
+      medicine_notebook_new_path
+    else
+      root_path
+    end
   end
 
   def edit
