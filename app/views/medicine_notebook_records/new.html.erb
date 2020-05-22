@@ -1,59 +1,53 @@
 <div class="container-login">
   <h2><%= t('activerecord.attributes.medicine_notebook_record.new_title') %></h2>
   <hr class="devise-link my-5">
-  <% if current_user == @user || pharmacy_signed_in? %>
-    <% if pharmacy_signed_in? %>
-      <h2><%= t('activerecord.attributes.medicine_notebook_record.caution') %></h2>
-      <div class="form-gruop">
-        <strong><%= t('user.registrations.show.side_effect') %></strong>
-        <%= current_user.side_effect %>
-      </div>
+  <% if pharmacy_signed_in? %>
+    <h2><%= t('activerecord.attributes.medicine_notebook_record.caution') %></h2>
+    <div class="form-gruop">
+      <strong><%= t('user.registrations.show.side_effect') %></strong>
+      <%= @user.side_effect %>
+    </div>
 
-      <div class="form-gruop">
-        <strong><%= t('user.registrations.show.allergy') %></strong>
-        <%= current_user.allergy %>
-      </div>
+    <div class="form-gruop">
+      <strong><%= t('user.registrations.show.allergy') %></strong>
+      <%= @user.allergy %>
+    </div>
 
-      <div class="form-gruop">
-        <strong><%= t('user.registrations.show.sick') %></strong>
-        <%= current_user.sick %>
-      </div>
+    <div class="form-gruop">
+      <strong><%= t('user.registrations.show.sick') %></strong>
+      <%= @user.sick %>
+    </div>
 
-      <div class="form-gruop">
-        <strong><%= t('user.registrations.show.operation') %></strong>
-        <%= current_user.operation %>
-      </div>
+    <div class="form-gruop">
+      <strong><%= t('user.registrations.show.operation') %></strong>
+      <%= @user.operation %>
+    </div>
 
-      <div class="form-gruop">
-        <strong><%= t('user.registrations.show.remarks') %></strong>
-        <%= current_user.remarks %>
-      </div>
-      <hr class="devise-link my-5">
-    <% end %>
-  
-    <h3><%= @user.name %></h3>
-    <a>処方日</a></br>
-    <a>調剤日</a></br>
-    <a>処方医療機関名</a></br>
-    <a>医師名</a></br>
-
-
-
-    <a>薬品名</a></br>
-    <a>1日◯錠</a></br>
-    <a>1回×錠</a></br>
-    <a>朝食後のプルダウン</a></br>
-
-    <a>用法追加ボタン</a></br>
-
-    <a>薬品追加ボタン</a></br>
-
-    <a>一言コメントが複数</a></br>
-    <a>薬局名</a></br>
-    <a>薬局電話番号</a></br>
-  <% else %>
-    <h2>家族連携につきましては今後機能追加を検討しています</2>
+    <div class="form-gruop">
+      <strong><%= t('user.registrations.show.remarks') %></strong>
+      <%= @user.remarks %>
+    </div>
+    <hr class="devise-link my-5">
   <% end %>
+  
+  <h3><%= @user.name %></h3>
+  <a>処方日</a></br>
+  <a>調剤日</a></br>
+  <a>処方医療機関名</a></br>
+  <a>医師名</a></br>
+
+  <a>薬品名</a></br>
+  <a>1日◯錠</a></br>
+  <a>1回×錠</a></br>
+  <a>朝食後のプルダウン</a></br>
+
+  <a>用法追加ボタン</a></br>
+
+  <a>薬品追加ボタン</a></br>
+
+  <a>一言コメントが複数</a></br>
+  <a>薬局名</a></br>
+  <a>薬局電話番号</a></br>
 
   <hr class="devise-link my-5">
   <div class="form-group">
