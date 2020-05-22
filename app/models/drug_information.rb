@@ -5,6 +5,6 @@ class DrugInformation < ApplicationRecord
   enum shading: { :light => false, :dark => true }
   enum one_dose_package: { :tablet => false, :pouch => true }
   enum tablet_color: { :red => 0, :yellow => 1, :green => 2, :blue => 3 }
-  mas_many :how_to_takes
+  has_many :how_to_takes
   belongs_to :medicine_notebook_record
 end

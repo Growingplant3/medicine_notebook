@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_19_083231) do
+ActiveRecord::Schema.define(version: 2020_05_21_144650) do
 
   create_table "activities", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "pharmacy_id"
@@ -37,10 +37,8 @@ ActiveRecord::Schema.define(version: 2020_05_19_083231) do
   create_table "drug_informations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "medicine_notebook_record_id"
     t.string "drug_name"
-    t.string "medical_effect"
+    t.integer "medical_effect"
     t.float "daily_dose"
-    t.integer "number_of_doses"
-    t.integer "when_to_take"
     t.integer "prescription_days"
     t.boolean "crush"
     t.boolean "shading"
@@ -48,6 +46,14 @@ ActiveRecord::Schema.define(version: 2020_05_19_083231) do
     t.integer "tablet_color"
     t.string "attention"
     t.string "remaining_medicine"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "how_to_takes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "drug_information_id"
+    t.float "number_fo_doses"
+    t.integer "when_to_take"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

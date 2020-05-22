@@ -1,5 +1,20 @@
 <div class="container-login">
   <h2><%= t('activerecord.attributes.medicine_notebook_record.new_title') %></h2>
+  <% if current_user == @user %>
+  <h2>ログインユーザーの時にはcurrent_userだけを使う</h2>
+  <%= current_user.name %>
+
+
+
+
+  <% elsif pharmacy_signed_in? %>
+  <h2>ログイン薬局の時には@userを使う</h2>
+  <%= @user.name %>
+
+  <% else %>
+  <h2>ログイン薬局でもなくcurrent_userでもなければ、他ユーザーにアクセスさせない</2>
+
+  <% end %>
 
   <hr class="devise-link my-5">
   <div class="form-group">
