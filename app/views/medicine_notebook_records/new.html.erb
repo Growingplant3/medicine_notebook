@@ -1,20 +1,109 @@
 <div class="container-login">
   <h2><%= t('activerecord.attributes.medicine_notebook_record.new_title') %></h2>
-  <% if current_user == @user %>
-  <h2>ログインユーザーの時にはcurrent_userだけを使う</h2>
-  <%= current_user.name %>
+  <hr class="devise-link my-5">
+  <% if pharmacy_signed_in? %>
+    <h2><%= t('activerecord.attributes.medicine_notebook_record.caution') %></h2>
+    <div class="form-gruop">
+      <strong><%= t('user.registrations.show.side_effect') %></strong>
+      <%= @user.side_effect %>
+    </div>
 
+    <div class="form-gruop">
+      <strong><%= t('user.registrations.show.allergy') %></strong>
+      <%= @user.allergy %>
+    </div>
 
+    <div class="form-gruop">
+      <strong><%= t('user.registrations.show.sick') %></strong>
+      <%= @user.sick %>
+    </div>
 
+    <div class="form-gruop">
+      <strong><%= t('user.registrations.show.operation') %></strong>
+      <%= @user.operation %>
+    </div>
 
-  <% elsif pharmacy_signed_in? %>
-  <h2>ログイン薬局の時には@userを使う</h2>
-  <%= @user.name %>
-
-  <% else %>
-  <h2>ログイン薬局でもなくcurrent_userでもなければ、他ユーザーにアクセスさせない</2>
-
+    <div class="form-gruop">
+      <strong><%= t('user.registrations.show.remarks') %></strong>
+      <%= @user.remarks %>
+    </div>
+    <hr class="devise-link my-5">
   <% end %>
+  
+  <h3><%= @user.name %></h3>
+  <%= nested_form_for @medicine_notebook_record,url: medicine_notebook_new_path do |f| %>
+    <div>
+      <!--user-->
+      <h3>medicine_notebook_record</h3>
+      <%= f.text_field :date_of_issue, {placeholder: "処方日"} %>
+      <%= f.text_field :date_of_dispensing %>
+      <%= f.text_field :medical_institution %>
+      <%= f.text_field :doctor_name %>
+      <%= f.text_field :attached_comment %>
+
+      <div>
+        <!--cellphone-->
+        <h3>drug_information</h3>
+        <%= f.fields_for :drug_informations do |f| %>
+          <%= f.text_field :drug_name, {placeholder: "薬品名"} %>
+          <%= f.text_field :daily_dose %>
+          <%= f.text_field :prescription_days %>
+          <%= f.text_field :medical_effect %>
+          <%= f.text_field :crush %>
+          <%= f.text_field :shading %>
+          <%= f.text_field :one_dose_package %>
+          <%= f.text_field :attention %>
+          <%= f.link_to_remove "削除" %>
+          
+          <div class="test"></div>
+            <div>
+              <!--app-->
+              <h3>how_to_takes</h3>
+              <%= f.fields_for :how_to_takes do |f| %>
+                <%= f.text_field :number_of_doses, {placeholder: "1回量"} %>
+                <%= f.text_field :when_to_take %>
+                <%= f.link_to_remove "削除" %>
+              <% end %>
+              <%= f.link_to_add "用法追加", :how_to_takes %>
+              <!--end_app-->
+
+            </div>
+        <% end %>
+        <%= f.link_to_add "薬品追加", :drug_informations %>
+        <!--end_cellphone-->
+
+      </div>
+      <!--end_user-->
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+  <hr class="devise-link my-5">
+  <a>処方日medicine/date_of_issue</a></br>
+  <a>調剤日medicine/date_of_despensing</a></br>
+  <a>処方医療機関名medicine/medical_institution</a></br>
+  <a>医師名medicine/doctor_name</a></br>
+
+  <a>薬品名drug/drug_name</a></br>
+  <a>1日◯錠drug/daily_dose</a></br>
+  <a>1回×錠how/number_of_doses</a></br>
+  <a>朝食後のプルダウンhow/when_to_take</a></br>
+  <a>◯日分drug/prescription_days</a></br>
+  <a>薬効drug/medical_effect</a></br>
+  <a>値を持っていたら粉砕/遮光/一包化,drug//crush/shading/one_dose_package</a></br>
+  <a>残薬drug/remaining_medicine</a></br>
+
+  <a>用法追加ボタン/</a>
+
+  <a>薬品追加ボタン</a></br>
+
+  <a>注意事項が複数drug/attention</a></br>
+  <a>薬局名pharmacy/pharmacy_name</a></br>
+  <a>薬局電話番号pharmacy/normal_telephone_number</a></br>
+  <a>一言コメントmedicine/attached_comment<a></br>
 
   <hr class="devise-link my-5">
   <div class="form-group">
