@@ -1,7 +1,7 @@
 class MedicineNotebookRecordsController < ApplicationController
   before_action :authenticate_pharmacy!, only: [:search]
   def new
-    one_user = @user = User.find(params[:id])
+    @user = User.find(params[:id])
     @medicine_notebook_record = MedicineNotebookRecord.new
     @drug_information = @medicine_notebook_record.drug_informations.build
     @drug_information.how_to_takes.build
