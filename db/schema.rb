@@ -37,15 +37,15 @@ ActiveRecord::Schema.define(version: 2020_05_21_144650) do
   create_table "drug_informations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "medicine_notebook_record_id"
     t.string "drug_name"
-    t.integer "medical_effect"
     t.float "daily_dose"
     t.integer "prescription_days"
+    t.integer "medical_effect"
     t.boolean "crush"
     t.boolean "shading"
     t.boolean "one_dose_package"
-    t.integer "tablet_color"
-    t.string "attention"
     t.string "remaining_medicine", default: "0"
+    t.string "attention"
+    t.integer "tablet_color"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

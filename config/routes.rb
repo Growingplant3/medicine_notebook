@@ -24,7 +24,8 @@ Rails.application.routes.draw do
   post '/conditions/create', to: 'conditions#create'
   get '/medicine_notebook/search', to: 'medicine_notebook_records#search'
   get '/users/:id/medicine_notebook/new', to: 'medicine_notebook_records#new', as: :medicine_notebook_new
-  post '/users/:id/medicine_notebook/new/', to: 'medicine_notebook_records#create'
+  post '/users/:id/medicine_notebook/new', to: 'medicine_notebook_records#create'
+  get '/show', to: 'medicine_notebook_records#show'
   get '/medicine_notebook/select', to: 'medicine_notebook_records#select'
   get '/medicine_notebook/edit', to: 'medicine_notebook_records#edit'
   post '/medicine_notebook/edit', to: 'medicine_notebook_records#edit'

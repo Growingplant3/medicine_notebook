@@ -31,6 +31,57 @@
   <% end %>
   
   <h3><%= @user.name %></h3>
+  <%= nested_form_for @medicine_notebook_record,url: medicine_notebook_new_path do |f| %>
+    <div>
+      <!--user-->
+      <h3>medicine_notebook_record</h3>
+      <%= f.text_field :date_of_issue, {placeholder: "処方日"} %>
+      <%= f.text_field :date_of_dispensing %>
+      <%= f.text_field :medical_institution %>
+      <%= f.text_field :doctor_name %>
+      <%= f.text_field :attached_comment %>
+
+      <div>
+        <!--cellphone-->
+        <h3>drug_information</h3>
+        <%= f.fields_for :drug_informations do |f| %>
+          <%= f.text_field :drug_name, {placeholder: "薬品名"} %>
+          <%= f.text_field :daily_dose %>
+          <%= f.text_field :prescription_days %>
+          <%= f.text_field :medical_effect %>
+          <%= f.text_field :crush %>
+          <%= f.text_field :shading %>
+          <%= f.text_field :one_dose_package %>
+          <%= f.text_field :attention %>
+          <%= f.link_to_remove "削除" %>
+          
+          <div class="test"></div>
+            <div>
+              <!--app-->
+              <h3>how_to_takes</h3>
+              <%= f.fields_for :how_to_takes do |f| %>
+                <%= f.text_field :number_of_doses, {placeholder: "1回量"} %>
+                <%= f.text_field :when_to_take %>
+                <%= f.link_to_remove "削除" %>
+              <% end %>
+              <%= f.link_to_add "用法追加", :how_to_takes %>
+              <!--end_app-->
+
+            </div>
+        <% end %>
+        <%= f.link_to_add "薬品追加", :drug_informations %>
+        <!--end_cellphone-->
+
+      </div>
+      <!--end_user-->
+    </div>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+  <hr class="devise-link my-5">
   <a>処方日medicine/date_of_issue</a></br>
   <a>調剤日medicine/date_of_despensing</a></br>
   <a>処方医療機関名medicine/medical_institution</a></br>
