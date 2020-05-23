@@ -108,6 +108,7 @@ ja:
         user_blood_type: 血液型
         user_telephone_number: 電話番号
         user_email: メールアドレス
+        new_title: お薬手帳記録作成
     models:
       user: ユーザ
   user:
@@ -268,6 +269,7 @@ ja:
       other_function: その他
       every_opinion: 皆様の声
       history: 開発履歴
+      developer: アプリについて
       search_medicine_notebook: お薬手帳記録検索
       search_pharmacy: 調剤薬局検索
       chat_support: チャット問い合わせ

@@ -6,7 +6,7 @@ class CreateMedicineNotebookRecords < ActiveRecord::Migration[6.0]
       t.time :date_of_issue
       t.time :date_of_dispensing
       t.string :medical_institution
-      t.string :doctor
+      t.string :doctor_name
       t.text :attached_comment
 
       t.timestamps

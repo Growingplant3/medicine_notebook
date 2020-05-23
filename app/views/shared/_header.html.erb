@@ -11,9 +11,15 @@
             <%= t('.function') %>
           </button>
             <ul class="dropdown-menu dropdown-menu-right">
-              <li class="dropdown-item">
-                <%= link_to t('.search_medicine_notebook'), medicine_notebook_search_path, class: 'nav-link' %>
-              </li>
+              <% if user_signed_in? %>
+                <li class="dropdown-item">
+                  <%= link_to t('.search_medicine_notebook'), medicine_notebook_new_path(current_user), class: 'nav-link' %>
+                </li>
+              <% elsif pharmacy_signed_in? %>
+                <li class="dropdown-item">
+                  <%= link_to t('.search_medicine_notebook'), medicine_notebook_search_path, class: 'nav-link' %>
+                </li>
+              <% end %>
               <li class="dropdown-item">
                 <%= link_to t('.search_pharmacy'), pharmacies_search_path, class: 'nav-link' %>
               </li>
@@ -71,6 +77,9 @@
               </li>
               <li class="dropdown-item">
                 <%= link_to t('.history'), histories_path, class: 'nav-link' %>
+              </li>
+              <li class="dropdown-item">
+                <%= link_to t('.developer'), developer_path, class: 'nav-link' %>
               </li>
             </ul>
         </div>  

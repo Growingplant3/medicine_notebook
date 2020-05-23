@@ -8,6 +8,7 @@ class AddStatusToUsers < ActiveRecord::Migration[6.0]
     add_column :users, :address_street, :string
     add_column :users, :address_building, :string
     add_column :users, :telephone_number, :string
+    add_column :users, :birthday, :date
     add_column :users, :age, :integer
     add_column :users, :sex, :integer, null: false, default: 0
     add_column :users, :body_weight, :integer
