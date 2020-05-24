@@ -17,7 +17,7 @@ class MedicineNotebookRecordsController < ApplicationController
     a.user_id = params[:id]
     a.pharmacy_id = current_pharmacy.id
     a.save
-    redirect_to show_path
+    redirect_to medicine_notebook_show_path
   end
 
   def show

@@ -23,10 +23,15 @@ ja:
         friday: "金曜日"
         saturday: "土曜日"
         sunday: "日曜日"
-    drugindormation:
+    drug_information:
+      drug_name:
+        amlodipine_2_5: "アムロジピン錠2.5mg"
+        amlodipine_5: "アムロジピン錠5mg"
+        rosuvastatin_2_5: "ロスバスタチン錠2.5mg"
+        rosuvastatin_5: "ロスバスタチン錠5mg"
       medical_effect:
-        antihypertensive: "血圧を抑える薬です。"
-        lipid_abnormalities: "脂質異常を抑える薬です。"
+        antihypertensive: "血圧を抑える薬です"
+        lipid_abnormalities: "脂質異常を抑える薬です"
       crush:
         as_it_is: "そのまま"
         smash: "粉砕"
@@ -41,7 +46,7 @@ ja:
         yellow: "黄"
         green: "緑"
         blue: "青"
-    howtotake:
+    how_to_take:
       when_to_take:
         wake_up: "起床時"
         before_morning_meal: "朝食前"
