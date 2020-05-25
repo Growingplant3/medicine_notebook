@@ -106,36 +106,33 @@
       </div>
 
       <div class="form-group">
-        <%= f.link_to_remove "削除" %>
+        <%= f.link_to_remove "薬品削除" %>
       </div>
 
       <div class="test"></div>
 
-      <div class="form-group">
-        <%= f.fields_for :how_to_takes do |f| %>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <%= f.label :number_of_doses %>
-              <%= f.number_field :number_of_doses, autofocus: true, class: 'form-control', placeholder: "ここには1回量を記載する" %>
-            </div>
-
-            <div class="form-group col-md-6">
-              <%= f.label :when_to_take %></br>
-              <%= f.select :when_to_take, HowToTake.when_to_takes_i18n.invert, autofocus: true, class: 'form-control' %>
-            </div>
+      <%= f.fields_for :how_to_takes do |f| %>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <%= f.label :number_of_doses %>
+            <%= f.number_field :number_of_doses, autofocus: true, class: 'form-control', placeholder: "ここには1回量を記載する" %>
           </div>
 
-          <%= f.link_to_remove "削除" %>
-              <% end %>
-              <%= f.link_to_add "用法追加", :how_to_takes %>
-
-            </div>
-        <% end %>
-
-        <div class="form-group">
-          <%= f.link_to_add "薬品追加", :drug_informations %>
+          <div class="form-group col-md-6">
+            <%= f.label :when_to_take %></br>
+            <%= f.select :when_to_take, HowToTake.when_to_takes_i18n.invert, autofocus: true, class: 'form-control' %>
+          </div>
         </div>
-      </div>
+
+        <%= f.link_to_remove "用法削除" %>
+      <% end %>
+
+      <%= f.link_to_add "用法追加", :how_to_takes %>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.link_to_add "薬品追加", :drug_informations %>
+    </div>
 
     <div class="actions container-login">
       <%= f.submit %>

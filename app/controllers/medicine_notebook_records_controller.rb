@@ -21,6 +21,7 @@ class MedicineNotebookRecordsController < ApplicationController
   end
 
   def show
+    
   end
 
   def search
