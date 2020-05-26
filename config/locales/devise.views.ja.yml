@@ -112,6 +112,15 @@ ja:
         caution: 記録前に必ず確認してください
         new_page: お薬手帳記録作成へ移動
         show_page: お薬手帳記録参照へ移動
+        white_daily_dose: ここには1日量を記載する
+        white_prescription_days: ここには処方日数を記載する
+        white_number_of_doses: ここには1回量を記載する
+        remove_medicine: 薬品削除
+        remove_how_to_take: 用法削除
+        add_medicine: 薬品追加
+        add_how_to_take: 用法追加
+        show_medicine_notebook_record: お薬手帳記録確認
+        user_name: "ユーザー名:" 
     models:
       user: ユーザ
   user:

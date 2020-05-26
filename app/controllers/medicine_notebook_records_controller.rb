@@ -9,7 +9,9 @@ class MedicineNotebookRecordsController < ApplicationController
     #redirect_to root_path unless @user == current_user || pharmacy_signed_in?
   end
 
-  def edit
+  def search
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true)
   end
 
   def create
@@ -17,19 +19,15 @@ class MedicineNotebookRecordsController < ApplicationController
     a.user_id = params[:id]
     a.pharmacy_id = current_pharmacy.id
     a.save
-    redirect_to medicine_notebook_show_path
+    redirect_to medicine_notebook_show_path(params[:id])
   end
 
   def show
-    
+    @user = User.find(params[:id])
+    redirect_to root_path unless pharmacy_signed_in?
   end
 
-  def search
-    @q = User.ransack(params[:q])
-    @users = @q.result(distinct: true)
-  end
-
-  def select
+  def edit
   end
 
   private

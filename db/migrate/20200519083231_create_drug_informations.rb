@@ -2,7 +2,7 @@ class CreateDrugInformations < ActiveRecord::Migration[6.0]
   def change
     create_table :drug_informations do |t|
       t.integer :medicine_notebook_record_id
-      t.string :drug_name
+      t.integer :drug_name
       t.float :daily_dose
       t.integer :prescription_days
       t.integer :medical_effect

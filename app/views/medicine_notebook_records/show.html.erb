@@ -1,11 +1,27 @@
 <div class="container-login">
-登録できたよ！
+  <%= render 'shared/flash_messages' %>
+  <h2><%= t('activerecord.attributes.medicine_notebook_record.show_medicine_notebook_record') %></h2>
+
+  <div class="form-gruop">
+    <strong><%= t('activerecord.attributes.medicine_notebook_record.user_name') %></strong> 
+    <%= @user.medicine_notebook_records.first.date_of_issue %>
+  </div>
+
+  <div class="form-gruop">
+    <strong><%= t('activerecord.attributes.medicine_notebook_record.user_name') %></strong> 
+    <%= @user.medicine_notebook_records.first.date_of_dispensing %>
+  </div>
+
+  <div class="form-gruop">
+    <strong><%= t('activerecord.attributes.medicine_notebook_record.user_name') %></strong> 
+    <%= @user.name %>
+  </div>
 
 </div>
 
 <div class="container-login">
   <hr class="devise-link my-5">
-  <%= link_to t('activerecord.attributes.medicine_notebook_record.new_page'), root_path, class: 'btn btn-success btn-block mb-4' %>
+  <%= link_to t('activerecord.attributes.medicine_notebook_record.new_page'), medicine_notebook_new_path, class: 'btn btn-success btn-block mb-4' %>
   <%#= link_to t('activerecord.attributes.medicine_notebook_record.new_page'), medicine_notebook_new_path(params[:id]), class: 'btn btn-success btn-block mb-4' %>  
   <%= link_to t('activerecord.attributes.user.top_page'), root_path, class: 'btn btn-info btn-block mb-4' %>
 </div>
