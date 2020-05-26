@@ -4,12 +4,12 @@
 
   <div class="form-gruop">
     <strong><%= t('activerecord.attributes.medicine_notebook_record.user_name') %></strong> 
-    <%= @user.medicine_notebook_records.first.date_of_issue %>
+    <%= @user.medicine_notebook_records.last.date_of_issue %>
   </div>
 
   <div class="form-gruop">
     <strong><%= t('activerecord.attributes.medicine_notebook_record.user_name') %></strong> 
-    <%= @user.medicine_notebook_records.first.date_of_dispensing %>
+    <%= @user.medicine_notebook_records.last.date_of_dispensing %>
   </div>
 
   <div class="form-gruop">
