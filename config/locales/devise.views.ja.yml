@@ -72,6 +72,9 @@ ja:
         name: 薬局名
         normal_telephone_number: 電話番号
         email: メールアドレス
+        pharmacy_name: "薬局名:"
+        pharmacy_address: "薬局住所:"
+        pharmacy_telephone_number: "薬局電話番号:"
       condition:
         record_nothing: 体調記録があれば、ここにグラフが表示されます
         index_title: 日々の体調記録
@@ -120,7 +123,20 @@ ja:
         add_medicine: 薬品追加
         add_how_to_take: 用法追加
         show_medicine_notebook_record: お薬手帳記録確認
-        user_name: "ユーザー名:" 
+        date_of_issue: "処方箋発行日:"
+        date_of_dispensing: "処方箋調剤日:"
+        user_name: "ユーザー名:"
+        medical_institution: "処方医療機関名:"
+        doctor_name: "保険医師名:"
+        honor: "先生"
+      drug_information:
+        drug_name: "薬品名:"
+        daily_dose: "1日量:"
+        tablet_unit: "錠"
+        prescription_days: "処方日数:"
+      how_to_take:
+        number_of_doses: "1回量:"
+        when_to_take: "服用時点:"
     models:
       user: ユーザ
   user:
