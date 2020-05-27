@@ -104,8 +104,9 @@ ja:
         blood_ab: AB型
         enter_user_telephone_number: 検索したい患者の電話番号を入力
         enter_user_email: 検索したい患者のメールアドレスを入力
-        all_user: 患者一覧
-        user_name: 患者名
+        all_user: ユーザー一覧
+        user_name: ユーザー名
+        user_name_colon: "ユーザー名:"
         user_age: 年齢
         user_sex: 性別
         user_blood_type: 血液型
@@ -123,20 +124,10 @@ ja:
         add_medicine: 薬品追加
         add_how_to_take: 用法追加
         show_medicine_notebook_record: お薬手帳記録確認
-        date_of_issue: "処方箋発行日:"
-        date_of_dispensing: "処方箋調剤日:"
-        user_name: "ユーザー名:"
-        medical_institution: "処方医療機関名:"
-        doctor_name: "保険医師名:"
         honor: "先生"
       drug_information:
-        drug_name: "薬品名:"
-        daily_dose: "1日量:"
         tablet_unit: "錠"
-        prescription_days: "処方日数:"
-      how_to_take:
-        number_of_doses: "1回量:"
-        when_to_take: "服用時点:"
+        day: "日分"
     models:
       user: ユーザ
   user:

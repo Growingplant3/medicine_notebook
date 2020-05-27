@@ -13,54 +13,56 @@
   </div>
 
   <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.medicine_notebook_record.user_name') %></strong> 
+    <strong><%= t('activerecord.attributes.medicine_notebook_record.user_name_colon') %></strong> 
     <%= @user.name %>
   </div>
 
   <div class="form-gruop">
     <strong><%= t('activerecord.attributes.medicine_notebook_record.medical_institution') %></strong> 
-    <%= @recent_reocrd.medical_institution %>
+    <%= @recent_record.medical_institution %>
   </div>
 
   <div class="form-gruop">
     <strong><%= t('activerecord.attributes.medicine_notebook_record.doctor_name') %></strong> 
     <%= @recent_record.doctor_name %>
-    <%#= t.('activerecord.attributes.medicine_notebook_record.honor') %>
+    <%= t('activerecord.attributes.medicine_notebook_record.honor') %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.drug_information.drug_name') %></strong> 
-    <%= @recent_record.drug_informations.last.drug_name %>
-  </div>
-
-  <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.drug_information.daily_dose') %></strong> 
+    <strong><%= t('activerecord.attributes.drug_information.drug_name') %></strong>/<strong><%= t('activerecord.attributes.drug_information.daily_dose') %></strong> 
+    <%= @recent_record.drug_informations.last.drug_name_i18n %>
     <%= @recent_record.drug_informations.last.daily_dose %>
+    <%= t('activerecord.attributes.drug_information.tablet_unit') %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.drug_information.number_od_doses') %></strong> 
-    <%= @recent_record.drug_informations.last.number_of_doses %>
-  </div>
-
-  <div class="form-gruop">
+    <strong><%= t('activerecord.attributes.how_to_take.number_of_doses') %></strong> 
+    <%= @recent_record.drug_informations.last.how_to_takes.last.number_of_doses %>
+    <%= t('activerecord.attributes.drug_information.tablet_unit') %>
+    <%= @recent_record.drug_informations.last.how_to_takes.last.when_to_take_i18n %>
     <strong><%= t('activerecord.attributes.drug_information.prescription_days') %></strong> 
     <%= @recent_record.drug_informations.last.prescription_days %>
+    <%= t('activerecord.attributes.drug_information.day') %>
   </div>
 
   <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.pharmacy.phamacy_name') %></strong> 
-    <%= @recent_record.pharmacies.name %>
+    <strong><%= t('activerecord.attributes.pharmacy.pharmacy_name') %></strong> 
+    <%= @recent_record.pharmacy.name %>
   </div>
 
   <div class="form-gruop">
     <strong><%= t('activerecord.attributes.pharmacy.pharmacy_address') %></strong> 
-    <%= @recent_record.pharmacies.name %>
+    <%= @recent_record.pharmacy.prefecture_code %>
+    <%= @recent_record.pharmacy.address_city %>
+    <%= @recent_record.pharmacy.address_street %>
+    <% if @recent_record.pharmacy.address_building.present? %>
+      <%= @recent_record.pharmacy.address_building %>
+    <% end %>
   </div>
 
   <div class="form-gruop">
     <strong><%= t('activerecord.attributes.pharmacy.pharmacy_telephone_number') %></strong> 
-    <%= @recent_record.pharmacies.telephone_number %>
+    <%= @recent_record.pharmacy.normal_telephone_number %>
   </div>
 
   <hr class="devise-link my-5">
