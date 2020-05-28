@@ -72,6 +72,9 @@ ja:
         name: 薬局名
         normal_telephone_number: 電話番号
         email: メールアドレス
+        pharmacy_name: "薬局名:"
+        pharmacy_address: "薬局住所:"
+        pharmacy_telephone_number: "薬局電話番号:"
       condition:
         record_nothing: 体調記録があれば、ここにグラフが表示されます
         index_title: 日々の体調記録
@@ -101,8 +104,9 @@ ja:
         blood_ab: AB型
         enter_user_telephone_number: 検索したい患者の電話番号を入力
         enter_user_email: 検索したい患者のメールアドレスを入力
-        all_user: 患者一覧
-        user_name: 患者名
+        all_user: ユーザー一覧
+        user_name: ユーザー名
+        user_name_colon: "ユーザー名:"
         user_age: 年齢
         user_sex: 性別
         user_blood_type: 血液型
@@ -110,6 +114,20 @@ ja:
         user_email: メールアドレス
         new_title: お薬手帳記録作成
         caution: 記録前に必ず確認してください
+        new_page: お薬手帳記録作成へ移動
+        show_page: お薬手帳記録参照へ移動
+        white_daily_dose: ここには1日量を記載する
+        white_prescription_days: ここには処方日数を記載する
+        white_number_of_doses: ここには1回量を記載する
+        remove_medicine: 薬品削除
+        remove_how_to_take: 用法削除
+        add_medicine: 薬品追加
+        add_how_to_take: 用法追加
+        show_medicine_notebook_record: お薬手帳記録確認
+        honor: "先生"
+      drug_information:
+        tablet_unit: "錠"
+        day: "日分"
     models:
       user: ユーザ
   user:
@@ -271,7 +289,7 @@ ja:
       every_opinion: 皆様の声
       history: 開発履歴
       developer: アプリについて
-      search_medicine_notebook: お薬手帳記録検索
+      search_medicine_notebook: お薬手帳記録作成
       search_pharmacy: 調剤薬局検索
       chat_support: チャット問い合わせ
       family_configure: 家族連携
@@ -288,7 +306,7 @@ ja:
       opinion: ご意見
       address_city: 都道府県
     index:
-      search_medicine_notebook: お薬手帳記録検索
+      search_medicine_notebook: お薬手帳記録作成
       search_medicine_notebook_explanation: 過去の処方箋情報が調べられます
       let_us_go: 使ってみる
       search_pharmacy: 調剤薬局検索

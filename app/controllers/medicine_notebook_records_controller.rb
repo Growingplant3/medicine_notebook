@@ -1,26 +1,12 @@
 class MedicineNotebookRecordsController < ApplicationController
   before_action :authenticate_pharmacy!, only: [:search]
   def new
+    redirect_to root_path unless pharmacy_signed_in?
     @user = User.find(params[:id])
     @medicine_notebook_record = MedicineNotebookRecord.new
     @drug_information = @medicine_notebook_record.drug_informations.build
     @drug_information.how_to_takes.build
-    redirect_to root_path unless pharmacy_signed_in?
     #redirect_to root_path unless @user == current_user || pharmacy_signed_in?
-  end
-
-  def edit
-  end
-
-  def create
-    a = MedicineNotebookRecord.new(medicine_notebook_record_params)
-    a.user_id = params[:id]
-    a.pharmacy_id = current_pharmacy.id
-    a.save
-    redirect_to show_path
-  end
-
-  def show
   end
 
   def search
@@ -28,7 +14,21 @@ class MedicineNotebookRecordsController < ApplicationController
     @users = @q.result(distinct: true)
   end
 
-  def select
+  def create
+    a = MedicineNotebookRecord.new(medicine_notebook_record_params)
+    a.user_id = params[:id]
+    a.pharmacy_id = current_pharmacy.id
+    a.save
+    redirect_to medicine_notebook_show_path(params[:id])
+  end
+
+  def show
+    redirect_to root_path unless pharmacy_signed_in?
+    @user = User.find(params[:id])
+    @recent_record = @user.medicine_notebook_records.last
+  end
+
+  def edit
   end
 
   private

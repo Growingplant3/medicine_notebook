@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_144650) do
 
   create_table "drug_informations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "medicine_notebook_record_id"
-    t.string "drug_name"
+    t.integer "drug_name"
     t.float "daily_dose"
     t.integer "prescription_days"
     t.integer "medical_effect"
@@ -61,8 +61,8 @@ ActiveRecord::Schema.define(version: 2020_05_21_144650) do
   create_table "medicine_notebook_records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "user_id"
     t.integer "pharmacy_id"
-    t.time "date_of_issue"
-    t.time "date_of_dispensing"
+    t.date "date_of_issue"
+    t.date "date_of_dispensing"
     t.string "medical_institution"
     t.string "doctor_name"
     t.text "attached_comment"
