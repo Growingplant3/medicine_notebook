@@ -28,22 +28,26 @@
     <%= t('activerecord.attributes.medicine_notebook_record.honor') %>
   </div>
 
-  <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.drug_information.drug_name') %></strong>/<strong><%= t('activerecord.attributes.drug_information.daily_dose') %></strong> 
-    <%= @recent_record.drug_informations.last.drug_name_i18n %>
-    <%= @recent_record.drug_informations.last.daily_dose %>
-    <%= t('activerecord.attributes.drug_information.tablet_unit') %>
-  </div>
+  <%= @recent_record.drug_informations.each do |one_drug_information| %>
+    <div class="form-gruop">
+      <strong><%= t('activerecord.attributes.drug_information.drug_name') %></strong>/<strong><%= t('activerecord.attributes.drug_information.daily_dose') %></strong> 
+      <%= one_drug_information.drug_name_i18n %>
+      <%= one_drug_information.daily_dose %>
+      <%= t('activerecord.attributes.drug_information.tablet_unit') %>
+    </div>
 
-  <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.how_to_take.number_of_doses') %></strong> 
-    <%= @recent_record.drug_informations.last.how_to_takes.last.number_of_doses %>
-    <%= t('activerecord.attributes.drug_information.tablet_unit') %>
-    <%= @recent_record.drug_informations.last.how_to_takes.last.when_to_take_i18n %>
-    <strong><%= t('activerecord.attributes.drug_information.prescription_days') %></strong> 
-    <%= @recent_record.drug_informations.last.prescription_days %>
-    <%= t('activerecord.attributes.drug_information.day') %>
-  </div>
+    <div class="form-gruop">
+      <%= one_drug_information.how_to_takes.each do |f| %>
+        <strong><%= t('activerecord.attributes.how_to_take.number_of_doses') %></strong> 
+        <%= f.number_of_doses %>
+        <%= t('activerecord.attributes.drug_information.tablet_unit') %>
+        <%= f.when_to_take_i18n %>
+      <% end %>
+      <strong><%= t('activerecord.attributes.drug_information.prescription_days') %></strong> 
+      <%= one_drug_information.prescription_days %>
+      <%= t('activerecord.attributes.drug_information.day') %>
+    </div>
+  <% end %>
 
   <div class="form-gruop">
     <strong><%= t('activerecord.attributes.pharmacy.pharmacy_name') %></strong> 
