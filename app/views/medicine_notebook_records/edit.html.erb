@@ -1,1 +1,147 @@
-editにきたよ。
+<div class="container-login">
+  <h1><%= t('activerecord.attributes.medicine_notebook_record.edit_medicine_notebook_record') %></h1>
+
+  <%= @medicine_notebook_record.id %>
+  <hr class="devise-link my-5">
+  <h2><%= t('activerecord.attributes.medicine_notebook_record.caution') %></h2>
+  <div class="form-group">
+    <h3><%= @user.name %></h3>
+  </div>
+
+  <div class="form-group">
+    <strong><%= t('user.registrations.show.side_effect') %></strong>
+    <%= @user.side_effect %>
+  </div>
+
+  <div class="form-group">
+    <strong><%= t('user.registrations.show.allergy') %></strong>
+    <%= @user.allergy %>
+  </div>
+
+  <div class="form-group">
+    <strong><%= t('user.registrations.show.sick') %></strong>
+    <%= @user.sick %>
+  </div>
+
+  <div class="form-group">
+    <strong><%= t('user.registrations.show.operation') %></strong>
+    <%= @user.operation %>
+  </div>
+
+  <div class="form-group">
+    <strong><%= t('user.registrations.show.remarks') %></strong>
+    <%= @user.remarks %>
+  </div>
+  <hr class="devise-link my-5">
+  
+  <%= nested_form_for @medicine_notebook_record,url: medicine_notebook_new_path do |f| %>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= f.label :date_of_issue %>
+        <%= f.date_field :date_of_issue, autofocus: true, class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-6"%>
+        <%= f.label :date_of_dispensing %>
+        <%= f.date_field :date_of_dispensing, autofocus: true, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :medical_institution %>
+      <%= f.text_field :medical_institution, autofocus: true, autocomplete: 'medical_institution', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :doctor_name %>
+      <%= f.text_field :doctor_name, autofocus: true, autocomplete: 'doctor_name', class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :attached_comment %>
+      <%= f.text_field :attached_comment, autofocus: true, autocomplete: 'attached_comment', class: 'form-control' %>
+    </div>
+
+    <%= f.fields_for :drug_informations do |f| %>
+      <div class="form-group">
+        <%= f.label :drug_name %></br>
+        <%= f.select :drug_name, DrugInformation.drug_names_i18n.invert, autofocus: true, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :daily_dose %>
+        <%= f.number_field :daily_dose, step: '0.25', autofocus: true, class: 'form-control', placeholder: t('activerecord.attributes.medicine_notebook_record.white_daily_dose') %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :prescription_days %>
+        <%= f.number_field :prescription_days, autofocus: true, class: 'form-control', placeholder: t('activerecord.attributes.medicine_notebook_record.white_prescription_days') %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :medical_effect %></br>
+        <%= f.select :medical_effect, DrugInformation.medical_effects_i18n.invert, autofocus: true, class: 'form-control' %>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <%= f.label :crush %>
+          <%= f.check_box :crush,{ autofocus: true, class: 'form-control'}, "smash", "as_it_is" %>
+        </div>
+
+        <div class="form-group col-md-4">
+          <%= f.label :shading %>
+          <%= f.check_box :shading,{ autofocus: true, class: 'form-control'}, "dark", "light" %>
+        </div>
+
+        <div class="form-group col-md-4">
+          <%= f.label :one_dose_package %>
+          <%= f.check_box :one_dose_package,{ autofocus: true, class: 'form-control'}, "pouch", "tablet" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :attention %>
+        <%= f.text_field :attention, autofocus: true, autocomplete: 'medical_effect', class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.link_to_remove t('activerecord.attributes.medicine_notebook_record.remove_medicine') %>
+      </div>
+
+      <div class="test"></div>
+
+      <%= f.fields_for :how_to_takes do |f| %>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <%= f.label :number_of_doses %>
+            <%= f.number_field :number_of_doses, step: '0.25', autofocus: true, class: 'form-control', placeholder: t('activerecord.attributes.medicine_notebook_record.white_number_of_doses') %>
+          </div>
+
+          <div class="form-group col-md-6">
+            <%= f.label :when_to_take %></br>
+            <%= f.select :when_to_take, HowToTake.when_to_takes_i18n.invert, autofocus: true, class: 'form-control' %>
+          </div>
+        </div>
+
+        <%= f.link_to_remove t('activerecord.attributes.medicine_notebook_record.remove_how_to_take') %>
+      <% end %>
+
+      <%= f.link_to_add t('activerecord.attributes.medicine_notebook_record.add_how_to_take'), :how_to_takes %>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.link_to_add t('activerecord.attributes.medicine_notebook_record.add_medicine'), :drug_informations %>
+    </div>
+
+    <div class="actions container-login">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+  <hr class="devise-link my-5">
+  <div class="form-group">
+    <%= link_to t('activerecord.attributes.pharmacy.top_page'), root_path, class: 'btn btn-info btn-block mb-4' %>
+    
+  </div>
+</div>

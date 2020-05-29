@@ -6,7 +6,7 @@
     <div class="form-gruop">
       <strong><%= t('activerecord.attributes.medicine_notebook_record.date_of_issue') %></strong> 
       <%= one_record.date_of_issue %>
-      <% select_id = one_record.id %>
+      <% @select_id = one_record.id %>
     </div>
 
     <div class="form-gruop">
@@ -84,7 +84,7 @@
   <%= paginate @all_records %>
 
   <hr class="devise-link my-5">
-  <%= link_to t('activerecord.attributes.medicine_notebook_record.edit_record'), medicine_notebook_edit_path(id: @user.id,medicine_notebook_id: select_id), class: 'btn btn-success btn-block mb-4' %>
+  <%= link_to t('activerecord.attributes.medicine_notebook_record.edit_record'), medicine_notebook_edit_path(id: @user.id,medicine_notebook_id: @select_id), class: 'btn btn-success btn-block mb-4' %>
   <%= link_to t('activerecord.attributes.medicine_notebook_record.new_page'), medicine_notebook_new_path, class: 'btn btn-primary btn-block mb-4' %>
   <%= link_to t('activerecord.attributes.user.top_page'), root_path, class: 'btn btn-info btn-block mb-4' %>
 </div>
