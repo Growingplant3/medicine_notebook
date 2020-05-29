@@ -125,6 +125,7 @@ ja:
         add_how_to_take: 用法追加
         show_medicine_notebook_record: お薬手帳記録確認
         honor: "先生"
+        edit_record: "お薬手帳記録情報を編集する"
       drug_information:
         tablet_unit: "錠"
         day: "日分"

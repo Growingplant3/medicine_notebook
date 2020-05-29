@@ -6,6 +6,7 @@
     <div class="form-gruop">
       <strong><%= t('activerecord.attributes.medicine_notebook_record.date_of_issue') %></strong> 
       <%= one_record.date_of_issue %>
+      <% select_id = one_record.id %>
     </div>
 
     <div class="form-gruop">
@@ -29,7 +30,7 @@
       <%= t('activerecord.attributes.medicine_notebook_record.honor') %>
     </div>
 
-    <%= one_record.drug_informations.each do |one_drug_information| %>
+    <% one_record.drug_informations.each do |one_drug_information| %>
       <div class="form-gruop">
         <strong><%= t('activerecord.attributes.drug_information.drug_name') %></strong>/<strong><%= t('activerecord.attributes.drug_information.daily_dose') %></strong> 
         <%= one_drug_information.drug_name_i18n %>
@@ -38,7 +39,7 @@
       </div>
 
       <div class="form-gruop">
-        <%= one_drug_information.how_to_takes.each do |f| %>
+        <% one_drug_information.how_to_takes.each do |f| %>
           <strong><%= t('activerecord.attributes.how_to_take.number_of_doses') %></strong> 
           <%= f.number_of_doses %>
           <%= t('activerecord.attributes.drug_information.tablet_unit') %>
@@ -47,6 +48,15 @@
         <strong><%= t('activerecord.attributes.drug_information.prescription_days') %></strong> 
         <%= one_drug_information.prescription_days %>
         <%= t('activerecord.attributes.drug_information.day') %>
+        <% if one_drug_information.crush == "smash" %>
+          <%= one_drug_information.crush_i18n %>
+        <% end %>
+        <% if one_drug_information.shading == "dark" %>
+          <%= one_drug_information.shading_i18n %>
+        <% end %>
+        <% if one_drug_information.one_dose_package == "pouch" %>
+          <%= one_drug_information.one_dose_package_i18n %>
+        <% end %>
       </div>
     <% end %>
 
@@ -70,11 +80,11 @@
       <%= one_record.pharmacy.normal_telephone_number %>
     </div>
   <% end %>
-  
+
   <%= paginate @all_records %>
 
   <hr class="devise-link my-5">
-  <%= link_to t('activerecord.attributes.medicine_notebook_record.new_page'), medicine_notebook_new_path, class: 'btn btn-success btn-block mb-4' %>
-  <%#= link_to t('activerecord.attributes.medicine_notebook_record.new_page'), medicine_notebook_new_path(params[:id]), class: 'btn btn-success btn-block mb-4' %>  
+  <%= link_to t('activerecord.attributes.medicine_notebook_record.edit_record'), medicine_notebook_edit_path(id: @user.id,medicine_notebook_id: select_id), class: 'btn btn-success btn-block mb-4' %>
+  <%= link_to t('activerecord.attributes.medicine_notebook_record.new_page'), medicine_notebook_new_path, class: 'btn btn-primary btn-block mb-4' %>
   <%= link_to t('activerecord.attributes.user.top_page'), root_path, class: 'btn btn-info btn-block mb-4' %>
 </div>
