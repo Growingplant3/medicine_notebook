@@ -25,7 +25,7 @@ class MedicineNotebookRecordsController < ApplicationController
   def show
     redirect_to root_path unless pharmacy_signed_in?
     @user = User.find(params[:id])
-    @recent_record = @user.medicine_notebook_records.last
+    @all_records = @user.medicine_notebook_records.order(created_at: :desc).page(params[:page]).per(1)
   end
 
   def edit

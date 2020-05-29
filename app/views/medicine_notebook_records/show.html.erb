@@ -2,72 +2,76 @@
   <%= render 'shared/flash_messages' %>
   <h2><%= t('activerecord.attributes.medicine_notebook_record.show_medicine_notebook_record') %></h2>
 
-  <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.medicine_notebook_record.date_of_issue') %></strong> 
-    <%= @recent_record.date_of_issue %>
-  </div>
-
-  <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.medicine_notebook_record.date_of_dispensing') %></strong> 
-    <%= @recent_record.date_of_dispensing %>
-  </div>
-
-  <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.medicine_notebook_record.user_name_colon') %></strong> 
-    <%= @user.name %>
-  </div>
-
-  <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.medicine_notebook_record.medical_institution') %></strong> 
-    <%= @recent_record.medical_institution %>
-  </div>
-
-  <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.medicine_notebook_record.doctor_name') %></strong> 
-    <%= @recent_record.doctor_name %>
-    <%= t('activerecord.attributes.medicine_notebook_record.honor') %>
-  </div>
-
-  <%= @recent_record.drug_informations.each do |one_drug_information| %>
+  <% @all_records.each do |one_record| %>
     <div class="form-gruop">
-      <strong><%= t('activerecord.attributes.drug_information.drug_name') %></strong>/<strong><%= t('activerecord.attributes.drug_information.daily_dose') %></strong> 
-      <%= one_drug_information.drug_name_i18n %>
-      <%= one_drug_information.daily_dose %>
-      <%= t('activerecord.attributes.drug_information.tablet_unit') %>
+      <strong><%= t('activerecord.attributes.medicine_notebook_record.date_of_issue') %></strong> 
+      <%= one_record.date_of_issue %>
     </div>
 
     <div class="form-gruop">
-      <%= one_drug_information.how_to_takes.each do |f| %>
-        <strong><%= t('activerecord.attributes.how_to_take.number_of_doses') %></strong> 
-        <%= f.number_of_doses %>
+      <strong><%= t('activerecord.attributes.medicine_notebook_record.date_of_dispensing') %></strong> 
+      <%= one_record.date_of_dispensing %>
+    </div>
+
+    <div class="form-gruop">
+      <strong><%= t('activerecord.attributes.medicine_notebook_record.user_name_colon') %></strong> 
+      <%= @user.name %>
+    </div>
+
+    <div class="form-gruop">
+      <strong><%= t('activerecord.attributes.medicine_notebook_record.medical_institution') %></strong> 
+      <%= one_record.medical_institution %>
+    </div>
+
+    <div class="form-gruop">
+      <strong><%= t('activerecord.attributes.medicine_notebook_record.doctor_name') %></strong> 
+      <%= one_record.doctor_name %>
+      <%= t('activerecord.attributes.medicine_notebook_record.honor') %>
+    </div>
+
+    <%= one_record.drug_informations.each do |one_drug_information| %>
+      <div class="form-gruop">
+        <strong><%= t('activerecord.attributes.drug_information.drug_name') %></strong>/<strong><%= t('activerecord.attributes.drug_information.daily_dose') %></strong> 
+        <%= one_drug_information.drug_name_i18n %>
+        <%= one_drug_information.daily_dose %>
         <%= t('activerecord.attributes.drug_information.tablet_unit') %>
-        <%= f.when_to_take_i18n %>
+      </div>
+
+      <div class="form-gruop">
+        <%= one_drug_information.how_to_takes.each do |f| %>
+          <strong><%= t('activerecord.attributes.how_to_take.number_of_doses') %></strong> 
+          <%= f.number_of_doses %>
+          <%= t('activerecord.attributes.drug_information.tablet_unit') %>
+          <%= f.when_to_take_i18n %>
+        <% end %>
+        <strong><%= t('activerecord.attributes.drug_information.prescription_days') %></strong> 
+        <%= one_drug_information.prescription_days %>
+        <%= t('activerecord.attributes.drug_information.day') %>
+      </div>
+    <% end %>
+
+    <div class="form-gruop">
+      <strong><%= t('activerecord.attributes.pharmacy.pharmacy_name') %></strong> 
+      <%= one_record.pharmacy.name %>
+    </div>
+
+    <div class="form-gruop">
+      <strong><%= t('activerecord.attributes.pharmacy.pharmacy_address') %></strong> 
+      <%= one_record.pharmacy.prefecture_code %>
+      <%= one_record.pharmacy.address_city %>
+      <%= one_record.pharmacy.address_street %>
+      <% if one_record.pharmacy.address_building.present? %>
+        <%= one_record.pharmacy.address_building %>
       <% end %>
-      <strong><%= t('activerecord.attributes.drug_information.prescription_days') %></strong> 
-      <%= one_drug_information.prescription_days %>
-      <%= t('activerecord.attributes.drug_information.day') %>
+    </div>
+
+    <div class="form-gruop">
+      <strong><%= t('activerecord.attributes.pharmacy.pharmacy_telephone_number') %></strong> 
+      <%= one_record.pharmacy.normal_telephone_number %>
     </div>
   <% end %>
-
-  <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.pharmacy.pharmacy_name') %></strong> 
-    <%= @recent_record.pharmacy.name %>
-  </div>
-
-  <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.pharmacy.pharmacy_address') %></strong> 
-    <%= @recent_record.pharmacy.prefecture_code %>
-    <%= @recent_record.pharmacy.address_city %>
-    <%= @recent_record.pharmacy.address_street %>
-    <% if @recent_record.pharmacy.address_building.present? %>
-      <%= @recent_record.pharmacy.address_building %>
-    <% end %>
-  </div>
-
-  <div class="form-gruop">
-    <strong><%= t('activerecord.attributes.pharmacy.pharmacy_telephone_number') %></strong> 
-    <%= @recent_record.pharmacy.normal_telephone_number %>
-  </div>
+  
+  <%= paginate @all_records %>
 
   <hr class="devise-link my-5">
   <%= link_to t('activerecord.attributes.medicine_notebook_record.new_page'), medicine_notebook_new_path, class: 'btn btn-success btn-block mb-4' %>

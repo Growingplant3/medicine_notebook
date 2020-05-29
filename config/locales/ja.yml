@@ -85,3 +85,10 @@ ja:
         after_dinner: "夕食後"
         between_dinner: "夕食間"
         night: "就寝前"
+  views:
+    pagination:
+      first: <i class="fas fa-angle-double-left"></i>
+      last: <i class="fas fa-angle-double-right"></i>
+      previous: <i class="fas fa-angle-left"></i>
+      next: <i class="fas fa-angle-right"></i>
+      truncate: "..."
