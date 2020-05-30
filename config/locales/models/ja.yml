@@ -53,6 +53,7 @@ ja:
         crush: "粉砕"
         shading: "遮光"
         one_dose_package: "一包化"
+        remaining_medicine: "残薬"
         attention: "一言コメント"
       how_to_take:
         number_of_doses: "1回"

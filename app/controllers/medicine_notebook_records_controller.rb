@@ -14,7 +14,6 @@ class MedicineNotebookRecordsController < ApplicationController
   end
 
   def create
-    redirect_to root_path unless pharmacy_signed_in?
     a = MedicineNotebookRecord.new(medicine_notebook_record_params)
     a.user_id = params[:id]
     a.pharmacy_id = current_pharmacy.id
@@ -33,8 +32,18 @@ class MedicineNotebookRecordsController < ApplicationController
     redirect_to root_path unless pharmacy_signed_in?
     @user = User.find(params[:id])
     @medicine_notebook_record = MedicineNotebookRecord.find(params[:medicine_notebook_id])
-    #MedicineNotebookRecord.update(medicine_notebook_record_params)
-    #redirect_to medicine_notebook_show_path(params[:id])
+  end
+
+  def update
+    @medicine_notebook_record = MedicineNotebookRecord.find(params[:medicine_notebook_id])
+    @medicine_notebook_record.update(medicine_notebook_record_params)
+    redirect_to medicine_notebook_show_path(params[:id])
+  end
+
+  def destroy
+    @medicine_notebook_record = MedicineNotebookRecord.find(params[:medicine_notebook_id])
+    @medicine_notebook_record.destroy
+    redirect_to medicine_notebook_show_path(params[:id])
   end
 
   private
