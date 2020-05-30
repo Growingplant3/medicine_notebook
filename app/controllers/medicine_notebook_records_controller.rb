@@ -49,7 +49,7 @@ class MedicineNotebookRecordsController < ApplicationController
   private
   def medicine_notebook_record_params
     params.require(:medicine_notebook_record).permit(:date_of_issue, :date_of_dispensing, :medical_institution, :doctor_name, :attached_comment,
-     drug_informations_attributes: [:user_id, :pharmacy_id, :drug_name, :daily_dose, :prescription_days, :medical_effect, :crush, :shading, :one_dose_package, :attention, :_destroy,
-      how_to_takes_attributes: [:number_of_doses, :when_to_take, :_destroy]])
+     drug_informations_attributes: [:id, :user_id, :pharmacy_id, :drug_name, :daily_dose, :prescription_days, :medical_effect, :crush, :shading, :one_dose_package, :remaining_medicine, :attention, :_destroy,
+      how_to_takes_attributes: [:id, :number_of_doses, :when_to_take, :_destroy]])
   end
 end

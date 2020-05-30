@@ -25,8 +25,8 @@ ja:
         sunday: "日曜日"
     drug_information:
       drug_name:
-        amlodipine_2_5: "アムロジピン錠2.5mg"
-        amlodipine_5: "アムロジピン錠5mg"
+        amlodipine_2_5: "アムロジン錠2.5mg"
+        amlodipine_5: "アムロジン錠5mg"
         rosuvastatin_2_5: "ロスバスタチン錠2.5mg"
         rosuvastatin_5: "ロスバスタチン錠5mg"
         xarelto_10: "イグザレルト錠10mg"
