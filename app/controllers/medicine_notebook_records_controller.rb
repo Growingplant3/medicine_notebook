@@ -1,6 +1,6 @@
 class MedicineNotebookRecordsController < ApplicationController
+  before_action :move_root
   def new
-    redirect_to root_path unless pharmacy_signed_in?
     @user = User.find(params[:id])
     @medicine_notebook_record = MedicineNotebookRecord.new
     @drug_information = @medicine_notebook_record.drug_informations.build
@@ -8,7 +8,6 @@ class MedicineNotebookRecordsController < ApplicationController
   end
 
   def search
-    redirect_to root_path unless pharmacy_signed_in?
     @q = User.ransack(params[:q])
     @users = @q.result(distinct: true)
   end
@@ -22,14 +21,12 @@ class MedicineNotebookRecordsController < ApplicationController
   end
 
   def show
-    redirect_to root_path unless pharmacy_signed_in?
     @user = User.find(params[:id])
     @all_records = @user.medicine_notebook_records.order(created_at: :desc).page(params[:page]).per(1)
     @select_id = 0
   end
 
   def edit
-    redirect_to root_path unless pharmacy_signed_in?
     @user = User.find(params[:id])
     @medicine_notebook_record = MedicineNotebookRecord.find(params[:medicine_notebook_id])
   end
@@ -51,5 +48,9 @@ class MedicineNotebookRecordsController < ApplicationController
     params.require(:medicine_notebook_record).permit(:date_of_issue, :date_of_dispensing, :medical_institution, :doctor_name, :attached_comment,
      drug_informations_attributes: [:id, :user_id, :pharmacy_id, :drug_name, :daily_dose, :prescription_days, :medical_effect, :crush, :shading, :one_dose_package, :remaining_medicine, :attention, :_destroy,
       how_to_takes_attributes: [:id, :number_of_doses, :when_to_take, :_destroy]])
+  end
+
+  def move_root
+    redirect_to root_path unless pharmacy_signed_in?
   end
 end
