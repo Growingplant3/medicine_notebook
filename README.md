@@ -1,24 +1,23 @@
-# README
+タイトル
+  ウェブお薬手帳
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+プロジェクトの概要説明
+  現在処方箋医薬品を受け取る際に、お薬手帳への記録は紙媒体が主流となっています。
+  しかし紙媒体だけでは不都合な場面も多々ありますので、電子媒体で利用することにより患者側・薬剤師側双方にメリットがあると考え自分なりのアプリを制作してみました。
 
-Things you may want to cover:
+主要機能
+  ユーザー登録、ユーザー情報参照、ユーザーログイン、ユーザー削除、ユーザー検索
+  薬局登録、薬局情報参照、薬局ログイン、薬局削除、薬局検索
+  お薬手帳情報作成、お薬手帳情報参照、お薬手帳情報編集、お薬手帳情報削除
+  体調記録作成、体調記録参照
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+使用言語、環境、テクノロジー
+  ruby 2.6.4
+  rails 6.0.2.2
+  
+今後の計画
+  使用できる機能を増やしていきます。
+  リファクタリングを行います。
+  テストコードを書きます。
+  使いやすいデザインを検討します。
+  ユーザーの意見を反映させます。
