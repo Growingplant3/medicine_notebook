@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get '/users/:id/medicine_notebook/new', to: 'medicine_notebook_records#new', as: :medicine_notebook_new
   post '/users/:id/medicine_notebook/new', to: 'medicine_notebook_records#create'
   get '/users/:id/medicine_notebook/show', to: 'medicine_notebook_records#show', as: :medicine_notebook_show
-  get '/users/:id/medicine_notebook/:medicine_notebook_id'/edit, to: 'medicine_notebook_records#edit', as: :medicine_notebook_edit
+  get '/users/:id/medicine_notebook/:medicine_notebook_id/edit', to: 'medicine_notebook_records#edit', as: :medicine_notebook_edit
   patch '/users/:id/medicine_notebook/:medicine_notebook_id', to: 'medicine_notebook_records#update'
   delete '/users/:id/medicine_notebook/:medicine_notebook_id', to: 'medicine_notebook_records#destroy'
   root 'homes#index'
