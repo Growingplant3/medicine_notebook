@@ -32,12 +32,17 @@ gem 'devise-bootstrap-views', '~> 1.0'
 
 # 検索機能
 gem 'ransack'
+
+# ページネーション機能
 gem 'kaminari'
 
 # 1対多
 gem 'nested_form'
+
+# 体調グラフチャート
 gem "chartkick"
 
+# git関連
 gem 'dotenv-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
