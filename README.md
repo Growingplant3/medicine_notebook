@@ -70,4 +70,4 @@ rails 6.0.2.2
 
 [こちら](http://3.23.180.43:3000/)で公開しています。
 
-問い合わせ・ご意見は、[製作者]https://twitter.com/Growingplant3までお願い致します。
+問い合わせ・ご意見は、[製作者](https://twitter.com/Growingplant3)までお願い致します。
