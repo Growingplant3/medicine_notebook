@@ -39,7 +39,7 @@ gem 'kaminari'
 # 1対多
 gem 'nested_form'
 
-# 体調グラフチャート
+# 体調グラフ
 gem "chartkick"
 
 # env関連
