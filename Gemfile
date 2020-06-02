@@ -42,7 +42,7 @@ gem 'nested_form'
 # 体調グラフチャート
 gem "chartkick"
 
-# git関連
+# env関連
 gem 'dotenv-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
