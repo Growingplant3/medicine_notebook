@@ -26,7 +26,7 @@ gem 'better_errors'
 gem 'binding_of_caller'
 
 # Bootstrap
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 gem 'bootstrap-sass'
 gem 'devise-bootstrap-views', '~> 1.0'
 
